@@ -5,8 +5,215 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="css/app.css" />
+    <!--  Font Awesome Icons  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!--  Inter Google font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h1>Hello Odoo site</h1>
+    <div class="header">
+      <header>
+        <nav>
+          <div class="logo">
+            <img src="img/odoo-white.svg" alt="odoo logo" />
+          </div>
+
+          <div class="navigation">
+            <a href="#">Home</a>
+            <a href="#">Products</a>
+            <a href="#">Pages</a>
+            <a href="#">App</a>
+            <a href="#">Docs</a>
+          </div>
+
+          <div class="action-items">
+            <a href="#">Sign in</a>
+            <div class="buy-now">
+              <h4><i class="fa-solid fa-bag-shopping"></i>Buy now</h4>
+            </div>
+          </div>
+        </nav>
+      </header>
+    </div>
+
+    <section class="hero">
+      <div class="container">
+        <div class="flexbox">
+          <div class="box">
+            <h1>Development done right</h1>
+            <h2>
+              Build a beautiful, modern website with flexible components built
+              from scratch.
+            </h2>
+            <div class="barra">
+              <a class="button" href="">
+                Get started
+                <i class="fa-solid fa-plus"></i>
+              </a>
+            </div>
+            <div class="trust">
+              <h3>Trusted by:</h3>
+              <div class="logos">
+                <img
+                  class="logo"
+                  src="img/google-white.svg"
+                  alt="google logo"
+                />
+                <img
+                  class="logo"
+                  src="img/spotify-white.svg"
+                  alt="spotify logo"
+                />
+                <img
+                  class="logo"
+                  src="img/airbnb-white.svg"
+                  alt="airbnb logo"
+                />
+                <img
+                  class="logo"
+                  src="img/paypal-white.svg"
+                  alt="paypal logo"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="box">
+            <div class="card-wrapper">
+              <div class="card-info">
+                <div class="top-info">
+                  <h3>Manage cards</h3>
+                  <a class="addnew" href="">Add new</a>
+                </div>
+
+                <div class="card-image">
+                  <div class="iconbar">
+                    <img
+                      class="mastercard"
+                      src="img/mastercard.svg"
+                      alt="mastercard logo"
+                    />
+                    <div class="active">
+                      <p>Active</p>
+                    </div>
+                  </div>
+                  <div class="info">
+                    <div class="number">
+                      <h3>card number</h3>
+                      <h2>4358 - 7421 - 9256 - 6682</h2>
+                    </div>
+                    <div class="details">
+                      <div class="flex">
+                        <div class="name">
+                          <h3>Name</h3>
+                          <h4>John Snow</h4>
+                        </div>
+                        <div class="date">
+                          <h3>Expiry date</h3>
+                          <h4>11/23</h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="content">
+                  <div class="box">
+                    <div class="place">
+                      <h3>Starbucks</h3>
+                      <p>Pending - San Francisco, United States</p>
+                    </div>
+                    <div class="place"><h3>$5,50 USD</h3></div>
+                  </div>
+                  <div class="box">
+                    <div class="place">
+                      <h3>Nike Sports</h3>
+                      <p>Pending - Lisbon, Portugal</p>
+                    </div>
+                    <div class="place"><h3>$129,00 USD</h3></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="space"></div>
+      <div class="container">
+        <div class="bflex">
+          <div class="bbox">
+            <div class="label">Features</div>
+            <h3>
+              Get components and examples, including tons of variables that will
+              help you grow your business.
+            </h3>
+            <p>
+              <i class="fas fa-check-square"></i>Perfect for modern startups
+            </p>
+            <p>
+              <i class="fas fa-check-square"></i>Fully customizable and scalable
+            </p>
+          </div>
+          <div class="bbox">
+            <div class="play">
+              <h4><i class="fa-solid fa-play"></i>Play video</h4>
+            </div>
+            <img src="img/img_02.jpg" alt="woman teaching in a computer" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="technology">
+      <div class="space"></div>
+      <div class="container">
+        <div class="flex-box">
+          <div class="sbox">
+            <div class="grid">
+              <div class="mybox box1">
+                <img class="person" src="img/person_03.jpg" alt="young man" />
+                <div class="bar">
+                  <div class="name">
+                    <div class="center">
+                      <div class="text">JH</div>
+                    </div>
+                    <p>Jimmy Hendrix</p>
+                  </div>
+
+                  <div class="heart"><i class="fa-regular fa-heart"></i></div>
+                </div>
+              </div>
+              <div class="mybox box2">Hello</div>
+              <div class="mybox box3">Hello</div>
+              <div class="mybox box4">Hello</div>
+            </div>
+          </div>
+          <div class="sbox">
+            <div class="label">Technology</div>
+            <h2>We use the latest technologies on the market</h2>
+            <p>
+              Get components and examples, including tons of variables that will
+              help you grow your business.
+            </p>
+            <div class="case">
+              <p>See case studies</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
