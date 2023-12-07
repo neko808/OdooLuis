@@ -1,3 +1,6 @@
+/*.   Mixins.   */
+/*    Functions    */
+/*    Variables   */
 /* Box sizing rules */
 *,
 *::before,
@@ -489,6 +492,9 @@ body {
   color: #718097;
   padding: 30px 0;
 }
+.technology .container .flex-box .sbox .grid .box2 .bar .stars :not(:last-child) {
+  color: #febd3d;
+}
 .technology .container .flex-box .sbox .grid .box2 .bar .stars i {
   font-size: 0.8rem;
   padding: 0 2px;
@@ -691,6 +697,7 @@ body {
 
 .infinite {
   width: 100%;
+  padding-bottom: 90px;
 }
 .infinite .container {
   width: min(1140px, 100%);
@@ -738,17 +745,340 @@ body {
 
 .awards {
   width: 100%;
+  padding: 90px 0;
+  background-color: #fafbff;
 }
 .awards .container {
   width: min(1140px, 100%);
   margin: 0 auto;
 }
-.awards .container .flexbox .bar .cards-carousel {
+.awards .container .flexbox {
+  display: flex;
+  flex-wrap: wrap;
+}
+.awards .container .flexbox .bar {
   width: 100%;
-  height: 300px;
+}
+.awards .container .flexbox .bar .label {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 50px;
+  background-color: #038aff;
+  color: white;
+}
+.awards .container .flexbox .bar h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  padding-top: 26px;
+}
+.awards .container .flexbox .bar .cards-carousel {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  width: 100%;
+  padding: 50px 0;
 }
 .awards .container .flexbox .bar .cards-carousel .card {
-  max-width: 300px;
+  overflow: hidden;
   width: 100%;
-  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2.2rem 1.6rem;
+  border-radius: 12px;
+  border: 1px solid #e8ebf2;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 1px 4px;
+}
+.awards .container .flexbox .bar .cards-carousel .card .stars {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: #718097;
+  padding: 30px 0;
+}
+.awards .container .flexbox .bar .cards-carousel .card .stars :not(:last-child) {
+  color: #febd3d;
+}
+.awards .container .flexbox .bar .cards-carousel .card .stars i {
+  font-size: 0.8rem;
+  padding: 0 2px;
+}
+.awards .container .flexbox .bar .cards-carousel .card .airbnb {
+  width: 120px;
+}
+.awards .container .flexbox .bar .cards-carousel .card .text {
+  text-align: center;
+}
+.awards .container .flexbox .bar .cards-carousel .card .text h3 {
+  font-size: 0.85rem;
+}
+.awards .container .flexbox .bar .cards-carousel .card .text p {
+  font-size: 0.85rem;
+}
+
+.answers {
+  width: 100%;
+  padding: 90px 0;
+}
+.answers .container {
+  width: min(1140px, 100%);
+  margin: 0 auto;
+}
+.answers .container .title {
+  text-align: center;
+  padding-bottom: 50px;
+}
+.answers .container .title h2 {
+  font-size: 1.9rem;
+  font-weight: 500;
+  padding: 30px 0 30px;
+}
+.answers .container .title p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  font-weight: 400;
+  color: #718097;
+}
+.answers .container .flexbox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.answers .container .flexbox .bar {
+  flex: 1;
+}
+.answers .container .flexbox .bar .main-content {
+  width: 100%;
+}
+.answers .container .flexbox .bar .main-content .description-title {
+  font-size: 1rem;
+  color: #162c5b;
+  padding-left: 18px;
+  line-height: 55px;
+  transition: 0.3s;
+  margin-top: 2px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  border: 1px solid #e8ebf2;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 1px 4px;
+}
+.answers .container .flexbox .bar .main-content .description-title:hover {
+  cursor: pointer;
+}
+.answers .container .flexbox .bar .main-content .expand-collapse {
+  float: right;
+  margin-right: 8px;
+}
+.answers .container .flexbox .bar .main-content .description {
+  font-size: 0.9rem;
+  max-height: 0;
+  overflow: hidden;
+  margin-left: 0px;
+  padding-left: 10px;
+  transition: max-height 0.2s ease-out;
+}
+.answers .container .flexbox .bar .main-content .description p {
+  margin-top: 4px;
+}
+
+.project {
+  width: 100%;
+  padding: 60px 0;
+}
+.project .container {
+  width: min(1140px, 100%);
+  margin: 0 auto;
+}
+.project .container .flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.project .container .flex .barra {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  padding-bottom: 30px;
+}
+.project .container .flex .barra .button {
+  display: inline-block;
+  padding: 14px 18px;
+  border-radius: 6px;
+  color: #fff;
+  background-color: #038aff;
+}
+.project .container .flex .barra .button i {
+  padding-left: 10px;
+}
+.project .container .flex .barra .learn {
+  display: inline-block;
+  padding: 14px 18px;
+  border-radius: 6px;
+  color: #162c5b;
+  background-color: #fff;
+}
+.project .container .flex .barra .learn i {
+  padding-left: 10px;
+}
+.project .container .flex h2 {
+  font-size: 1.9rem;
+  font-weight: 500;
+  padding: 30px 0 30px;
+}
+
+footer {
+  position: relative;
+  width: 100%;
+  padding: 90px 0 0;
+  background-color: #161348;
+}
+footer::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -70px; /* Keep a fixed pixel value */
+  width: 100vw;
+  height: 70px;
+  z-index: 10;
+  transform: rotate(180deg);
+  background: linear-gradient(to right bottom, #161348 50%, transparent 50%);
+}
+footer .container {
+  width: min(1140px, 100%);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+footer .container .brilliant {
+  width: 100%;
+  padding: 0 0 50px 0;
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(0.25turn, rgba(56, 2, 155, 0), rgb(255, 0, 128), rgba(56, 2, 155, 0));
+  border-image-slice: 1;
+  width: 100%;
+}
+footer .container .brilliant .flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+footer .container .brilliant .flex .buttons .barra {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  width: 100%;
+  padding-bottom: 30px;
+}
+footer .container .brilliant .flex .buttons .barra .button {
+  font-size: 0.9rem;
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 6px;
+  color: #162c5b;
+  background-color: #fff;
+}
+footer .container .brilliant .flex .buttons .barra .button i {
+  padding-right: 10px;
+}
+footer .container .brilliant .flex .buttons .barra .purchase {
+  font-size: 0.9rem;
+  display: inline-block;
+  padding: 10px 14px;
+  margin-left: 20px;
+  border-radius: 6px;
+  color: #fff;
+  background-color: #038aff;
+}
+footer .container .brilliant .flex .text h2 {
+  color: #fff;
+}
+footer .container .brilliant .flex .text p {
+  color: #acaabf;
+}
+footer .container .brilliant .flex .bar {
+  flex: 1;
+}
+footer .container .info {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 40px;
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(0.25turn, rgba(56, 2, 155, 0), rgb(38, 31, 148), rgba(56, 2, 155, 0));
+  border-image-slice: 1;
+  width: 100%;
+}
+footer .container .info .flexbox {
+  display: flex;
+  flex-wrap: wrap;
+}
+footer .container .info .flexbox .box h3 {
+  font-size: 1rem;
+  padding-bottom: 20px;
+  color: #fff;
+}
+footer .container .info .flexbox .box ul li {
+  font-size: 0.8rem;
+  padding-bottom: 10px;
+  color: #acaabf;
+}
+footer .container .info .flexbox .box1 {
+  flex: 1 0 55%;
+}
+footer .container .info .flexbox .box1 p {
+  width: min(300px, 100%);
+  color: #acaabf;
+  font-size: 0.8rem;
+  font-weight: 400;
+  padding: 30px 0;
+}
+footer .container .info .flexbox .box1 .logo {
+  width: 100px;
+}
+footer .container .info .flexbox .box1 .social i {
+  color: #acaabf;
+  padding-right: 16px;
+}
+footer .container .info .flexbox .box2 {
+  flex: 1 0 15%;
+}
+footer .container .info .flexbox .box3 {
+  flex: 1 0 15%;
+}
+footer .container .info .flexbox .box4 {
+  flex: 1 0 15%;
+}
+footer .container .bottom-info {
+  width: 100%;
+}
+footer .container .bottom-info .flexbox {
+  display: flex;
+  flex-wrap: wrap;
+}
+footer .container .bottom-info .flexbox .bar {
+  flex: 1;
+  padding: 40px 0 20px;
+}
+footer .container .bottom-info .flexbox .bar .copy {
+  font-size: 0.8rem;
+  color: #acaabf;
+}
+footer .container .bottom-info .flexbox .bar .copy span {
+  color: #fff;
+}
+footer .container .bottom-info .flexbox .bar .links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+footer .container .bottom-info .flexbox .bar .links ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+footer .container .bottom-info .flexbox .bar .links ul li {
+  font-size: 0.8rem;
+  padding-left: 20px;
+  color: #acaabf;
 }
