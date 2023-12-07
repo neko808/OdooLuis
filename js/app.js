@@ -51,3 +51,11 @@ var accordionClick = (eventHappened) => {
     expander.innerHTML = "&#10134;";
   }
 };
+
+/*  Responsive menu  */
+// const burgerMenu = document.getElementById("hamb");
+// const overlay = document.getElementById("menu");
+// burgerMenu.addEventListener("click", function () {
+//   this.classList.toggle("close");
+//   overlay.classList.toggle("overlay");
+// });

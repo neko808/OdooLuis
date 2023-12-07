@@ -1,0 +1,59 @@
+$soft-color: #e1e8f0;
+$text-hero: white;
+$text-white: white;
+$card-color: #162c5b;
+$button-color: white;
+$button-text-color: black;
+$features-color: #5ccaa7;
+$technology-color: #038aff;
+$awards-color: #038aff;
+$easy-color: #febd3d;
+
+$small-font: 0.8rem;
+
+// Typography
+
+//New variables
+$ff-text: "Inter", sans-serif;
+$fw-400: 400;
+$fw-500: 500;
+$fw-600: 600;
+$fw-700: 700;
+$box-shadow: rgba(35, 24, 54, 0.25);
+
+/*.   Mixins.   */
+
+@mixin shadow {
+  border-radius: 12px;
+  border: 1px solid #e8ebf2;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 1px 4px;
+}
+
+/*    Functions    */
+
+@function color($elem, $variant) {
+  @return map-get(map-get($color, $elem), $variant);
+}
+
+/*    Variables   */
+
+$color: (
+  text: (
+    1: #162c5b,
+    2: #565678,
+    3: #ababc9,
+    soft: #718097,
+    footer: #acaabf,
+    1i: #fff,
+    2i: rgba(#fff, 0.4),
+  ),
+  bg: (
+    hero: #038aff,
+    awards: #fafbff,
+    3: #d2daf0,
+    infinite: #161348,
+    footer: #161348,
+    line-footer: #2f2c5b,
+    white: #fff,
+  ),
+);

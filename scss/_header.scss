@@ -1,0 +1,224 @@
+/*    Functions    */
+
+@function color($elem, $variant) {
+  @return map-get(map-get($color, $elem), $variant);
+}
+
+/*    Variables   */
+$color: (
+  text: (
+    1: #162c5b,
+    1i: #fff,
+  ),
+  bg: (
+    hero: #038aff,
+    white: #fff,
+  ),
+);
+/*  Header menu  */
+.header {
+  position: relative;
+  background-color: color(bg, hero);
+  width: 100%;
+  header {
+    margin: 0 auto;
+    max-width: 1140px;
+    width: 100%;
+    padding: 16px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  }
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    .menu {
+      visibility: hidden;
+    }
+    .menu .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200px;
+      height: 200px;
+      visibility: visible;
+      opacity: 1;
+      padding-top: 100px;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+    }
+    .hamb {
+      display: none;
+
+      .menu-icon {
+        cursor: pointer;
+        display: inline-block;
+        padding: 9px 0 5px 16px;
+        position: relative;
+        user-select: none;
+        .navicon {
+          background: white;
+          display: block;
+          height: 2px;
+          position: relative;
+          transition: background 0.2s ease-out;
+          width: 18px;
+        }
+        .navicon:before,
+        .navicon:after {
+          background: white;
+          content: "";
+          display: block;
+          height: 100%;
+          position: absolute;
+          transition: all 0.2s ease-out;
+          width: 100%;
+        }
+        .navicon:before {
+          top: 5px;
+        }
+        .navicon:after {
+          top: -5px;
+        }
+      }
+      .menu-btn {
+        display: none;
+      }
+      .menu-btn:checked ~ .menu {
+        max-height: 260px;
+      }
+      .menu-btn:checked ~ .menu-icon .navicon {
+        background: transparent;
+      }
+      .menu-btn:checked ~ .menu-icon .navicon:before {
+        transform: rotate(-45deg);
+      }
+      .menu-btn:checked ~ .menu-icon .navicon:after {
+        transform: rotate(45deg);
+      }
+      .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+      .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+        top: 0;
+      }
+    }
+    @media screen and (max-width: 800px) {
+      .hamb {
+        display: block;
+        border: 1px solid red;
+      }
+    }
+    div {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      a {
+        font-size: 0.9rem;
+        color: color(text, 1i);
+      }
+    }
+    .logo,
+    .action-items {
+      flex: 1 1 0;
+    }
+    .logo {
+      img {
+        width: 103px;
+      }
+    }
+    .navigation {
+      padding: 0 10px;
+      a {
+        padding: 0 10px;
+      }
+    }
+    .action-items {
+      justify-content: flex-end;
+      a {
+        .buynow {
+          background-color: color(bg, white);
+          border-radius: 6px;
+          margin-left: 10px;
+          padding: 6px 12px 6px 6px;
+          h4 {
+            color: color(text, 1);
+            font-size: 0.8rem;
+            font-weight: 400;
+            padding-left: 6px;
+            i {
+              color: color(text, 1);
+              padding-right: 6px;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 800px) {
+    header {
+      nav {
+        .navigation {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+/*  Responsive menu  */
+
+.hamb {
+  .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+    .navicon {
+      background: white;
+      display: block;
+      height: 2px;
+      position: relative;
+      transition: background 0.2s ease-out;
+      width: 18px;
+    }
+    .navicon:before,
+    .navicon:after {
+      background: white;
+      content: "";
+      display: block;
+      height: 100%;
+      position: absolute;
+      transition: all 0.2s ease-out;
+      width: 100%;
+    }
+    .navicon:before {
+      top: 5px;
+    }
+    .navicon:after {
+      top: -5px;
+    }
+  }
+  .menu-btn {
+    display: none;
+  }
+  .menu-btn:checked ~ .menu {
+    max-height: 260px;
+  }
+  .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+  }
+  .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+  }
+  .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+  }
+  .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+  .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+  }
+}
+@media screen and (max-width: 800px) {
+  .hamb {
+    display: block;
+  }
+}

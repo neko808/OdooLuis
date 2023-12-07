@@ -1,4 +1,6 @@
-$text-soft-color: #718097;
+@use "header";
+@use "layout";
+
 $soft-color: #e1e8f0;
 $text-hero: white;
 $text-white: white;
@@ -43,6 +45,7 @@ $color: (
     1: #162c5b,
     2: #565678,
     3: #ababc9,
+    soft: #718097,
     footer: #acaabf,
     1i: #fff,
     2i: rgba(#fff, 0.4),
@@ -50,141 +53,18 @@ $color: (
   bg: (
     hero: #038aff,
     awards: #fafbff,
+    tools: #febd3d,
     3: #d2daf0,
     infinite: #161348,
     footer: #161348,
     line-footer: #2f2c5b,
     white: #fff,
   ),
-  primary: (
-    1: #4385f5,
-    2: #8d92fa,
-    3: #261fb6,
-    4: #e0e1fe,
-  ),
 );
-
-/* Box sizing rules */
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Remove list styles on ul */
-ul {
-  list-style: none;
-}
-
-/* Make images easier to work with */
-img {
-  max-width: 100%;
-  display: block;
-}
-
-/* Inherit fonts for inputs and buttons */
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-/* Set core body defaults */
-body {
-  min-height: 100vh;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-h1,
-h2,
-h3,
-p {
-  color: color(text, 1);
-}
-
-a {
-  text-decoration: none;
-}
-
-body {
-  font-family: "Inter", sans-serif;
-}
 
 .space {
   width: 100%;
   height: 90px;
-}
-
-/*  Header menu  */
-.header {
-  position: relative;
-  background-color: color(bg, hero);
-  width: 100%;
-  header {
-    margin: 0 auto;
-    max-width: 1140px;
-    width: 100%;
-    padding: 16px 16px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-  }
-  nav {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    div {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      a {
-        font-size: 0.9rem;
-        color: $text-hero;
-      }
-    }
-    .logo,
-    .action-items {
-      flex: 1 1 0;
-    }
-    .logo {
-      img {
-        width: 103px;
-      }
-    }
-    .navigation {
-      padding: 0 10px;
-      a {
-        padding: 0 10px;
-      }
-    }
-    .action-items {
-      justify-content: flex-end;
-      a {
-        .buynow {
-          background-color: white;
-          border-radius: 6px;
-          margin-left: 10px;
-          padding: 6px 12px 6px 6px;
-          h4 {
-            color: color(text, 1);
-            font-size: 0.8rem;
-            font-weight: 400;
-            padding-left: 6px;
-            i {
-              color: color(text, 1);
-              padding-right: 6px;
-            }
-          }
-        }
-      }
-    }
-  }
 }
 
 /*  Hero section  */
@@ -196,7 +76,7 @@ body {
     content: "";
     position: absolute;
     left: 0;
-    bottom: -70px; /* Keep a fixed pixel value */
+    bottom: -70px;
     width: 100vw;
     height: 70px;
     z-index: 10;
@@ -254,7 +134,7 @@ body {
                 font-size: small;
                 padding: 4px 8px;
                 border-radius: 6px;
-                border: 1px solid $text-soft-color;
+                border: 1px solid color(text, soft);
               }
               h3 {
                 color: color(text, 1);
@@ -277,7 +157,7 @@ body {
                     padding-bottom: 6px;
                   }
                   p {
-                    color: $text-soft-color;
+                    color: color(text, soft);
                     font-size: small;
                   }
                 }
@@ -415,8 +295,82 @@ body {
   }
 }
 
+.tools {
+  width: 100%;
+  padding: 130px 1rem 60px;
+  .container {
+    width: min(1140px, 100%);
+    margin: 0 auto;
+    .flex {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+      .box {
+        border: 1px solid red;
+        flex: 1;
+        &:last-child {
+          padding: 38px;
+        }
+        .barra {
+          padding: 34px;
+          @include shadow;
+          h3 {
+            font-size: 1rem;
+            font-weight: $fw-500;
+            padding-bottom: 10px;
+          }
+          .bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding-top: 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid color(bg, tools);
+            .text {
+              font-size: 0.9rem;
+            }
+            .time {
+              color: color(text, soft);
+              font-size: 0.9rem;
+              i {
+                padding-left: 6px;
+
+                color: color(text, soft);
+              }
+            }
+          }
+        }
+        .info {
+          h2 {
+            font-size: 1.9rem;
+            font-weight: $fw-500;
+            padding: 30px 0 30px;
+          }
+          p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            font-weight: $fw-400;
+            color: color(text, soft);
+          }
+          .label {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: $fw-600;
+            padding: 5px 10px;
+            border-radius: 50px;
+            background-color: color(bg, tools);
+            color: $text-white;
+          }
+        }
+      }
+    }
+  }
+}
+
 .features {
   width: 100%;
+  padding: 0 1rem;
   .container {
     width: min(1140px, 100%);
     margin: 0 auto;
@@ -433,6 +387,9 @@ body {
         flex-wrap: wrap;
         align-items: center;
         padding: 1rem;
+        &:first-child {
+          padding: 38px;
+        }
         .play {
           position: absolute;
           cursor: pointer;
@@ -485,6 +442,7 @@ body {
 
 .technology {
   width: 100%;
+  padding: 0 1rem;
   .container {
     width: min(1140px, 100%);
     margin: 0 auto;
@@ -497,6 +455,9 @@ body {
       .sbox {
         flex: 1;
         padding: 1rem;
+        &:last-child {
+          padding: 38px;
+        }
         .grid {
           display: grid;
           gap: 1rem;
@@ -544,7 +505,7 @@ body {
               }
               .heart {
                 i {
-                  color: $text-soft-color;
+                  color: color(text, soft);
                 }
               }
             }
@@ -565,7 +526,7 @@ body {
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: center;
-                color: $text-soft-color;
+                color: color(text, soft);
                 padding: 30px 0;
                 :not(:last-child) {
                   color: $easy-color;
@@ -654,9 +615,9 @@ body {
                 width: 100%;
                 padding: 20px 0;
                 text-align: center;
-                border-top: 1px solid $text-soft-color;
+                border-top: 1px solid color(text, soft);
                 i {
-                  color: $text-soft-color;
+                  color: color(text, soft);
                   padding: 0 10px;
                 }
               }
@@ -681,7 +642,7 @@ body {
           font-size: 1.1rem;
           line-height: 1.8;
           font-weight: $fw-400;
-          color: $text-soft-color;
+          color: color(text, soft);
         }
         .label {
           display: inline-block;
@@ -709,6 +670,7 @@ body {
 
 .easy {
   width: 100%;
+  padding: 0 1rem;
   .container {
     width: min(1140px, 100%);
     margin: 0 auto;
@@ -721,6 +683,9 @@ body {
       .box {
         flex: 1;
         position: relative;
+        &:first-child {
+          padding: 38px;
+        }
         .logos {
           padding-top: 40px;
           .appstore,
@@ -763,7 +728,7 @@ body {
           font-size: 1.1rem;
           line-height: 1.8;
           font-weight: $fw-400;
-          color: $text-soft-color;
+          color: color(text, soft);
         }
         .label {
           display: inline-block;
@@ -830,8 +795,23 @@ body {
 
 .awards {
   width: 100%;
-  padding: 90px 0;
+  padding: 90px 1rem;
+  position: relative;
   background-color: color(bg, awards);
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -70px;
+    width: 100vw;
+    height: 70px;
+    z-index: 10;
+    background: linear-gradient(
+      to right bottom,
+      color(bg, awards) 50%,
+      transparent 50%
+    );
+  }
   .container {
     width: min(1140px, 100%);
     margin: 0 auto;
@@ -854,29 +834,33 @@ body {
           font-weight: $fw-500;
           padding-top: 26px;
         }
-        .cards-carousel {
+        .items {
           display: grid;
           gap: 1rem;
-          grid-template-columns: repeat(5, minmax(0, 1fr));
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
           width: 100%;
           padding: 50px 0;
-          .card {
+          .item {
             overflow: hidden;
-            width: 100%;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             padding: 2.2rem 1.6rem;
-            border-radius: 12px;
-            border: 1px solid #e8ebf2;
-            box-shadow: rgba(0, 0, 0, 0.06) 0px 1px 4px;
+            transition: all 0.2s ease;
+            @include shadow;
+            // &:nth-child(odd) {
+            //   transform: translateY(60px);
+            // }
+            &:hover {
+              transform: translateY(-28px);
+            }
             .stars {
               width: 100%;
               display: flex;
               flex-wrap: wrap;
               justify-content: center;
-              color: $text-soft-color;
-              padding: 30px 0;
+              color: color(text, soft);
+              padding: 30px 0 0;
               :not(:last-child) {
                 color: $easy-color;
               }
@@ -888,6 +872,23 @@ body {
             .airbnb {
               width: 120px;
             }
+            .amazon {
+              width: 110px;
+            }
+            .slack {
+              width: 120px;
+            }
+            .spotify {
+              width: 134px;
+            }
+            .texto {
+              text-align: center;
+              padding-top: 24px;
+              p {
+                font-size: 0.85rem;
+                color: color(text, soft);
+              }
+            }
             .text {
               text-align: center;
               h3 {
@@ -895,6 +896,15 @@ body {
               }
               p {
                 font-size: 0.85rem;
+                color: color(text, soft);
+              }
+            }
+            .learn {
+              border-bottom: 2px solid color(text, 1);
+              h3 {
+                font-size: 0.8rem;
+                color: color(text, 1);
+                padding-bottom: 3px;
               }
             }
           }
@@ -906,7 +916,7 @@ body {
 
 .answers {
   width: 100%;
-  padding: 90px 0;
+  padding: 90px 1rem;
   .container {
     width: min(1140px, 100%);
     margin: 0 auto;
@@ -922,7 +932,7 @@ body {
         font-size: 1.1rem;
         line-height: 1.8;
         font-weight: $fw-400;
-        color: $text-soft-color;
+        color: color(text, soft);
       }
     }
     .flexbox {
@@ -970,7 +980,7 @@ body {
 
 .project {
   width: 100%;
-  padding: 60px 0;
+  padding: 60px 1rem;
   .container {
     width: min(1140px, 100%);
     margin: 0 auto;
@@ -1017,13 +1027,13 @@ body {
 footer {
   position: relative;
   width: 100%;
-  padding: 90px 0 0;
+  padding: 90px 1rem;
   background-color: color(bg, footer);
   &::before {
     content: "";
     position: absolute;
     left: 0;
-    top: -70px; /* Keep a fixed pixel value */
+    top: -70px;
     width: 100vw;
     height: 70px;
     z-index: 10;
@@ -1037,7 +1047,6 @@ footer {
   .container {
     width: min(1140px, 100%);
     margin: 0 auto;
-    padding: 0 1rem;
     .brilliant {
       width: 100%;
       padding: 0 0 50px 0;

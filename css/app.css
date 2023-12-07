@@ -1,6 +1,201 @@
-/*.   Mixins.   */
 /*    Functions    */
 /*    Variables   */
+/*  Header menu  */
+.header {
+  position: relative;
+  background-color: #038aff;
+  width: 100%;
+}
+.header header {
+  margin: 0 auto;
+  max-width: 1140px;
+  width: 100%;
+  padding: 16px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+.header nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.header nav .menu {
+  visibility: hidden;
+}
+.header nav .menu .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 200px;
+  visibility: visible;
+  opacity: 1;
+  padding-top: 100px;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+.header nav .hamb {
+  display: none;
+}
+.header nav .hamb .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  padding: 9px 0 5px 16px;
+  position: relative;
+  user-select: none;
+}
+.header nav .hamb .menu-icon .navicon {
+  background: white;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background 0.2s ease-out;
+  width: 18px;
+}
+.header nav .hamb .menu-icon .navicon:before,
+.header nav .hamb .menu-icon .navicon:after {
+  background: white;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+}
+.header nav .hamb .menu-icon .navicon:before {
+  top: 5px;
+}
+.header nav .hamb .menu-icon .navicon:after {
+  top: -5px;
+}
+.header nav .hamb .menu-btn {
+  display: none;
+}
+.header nav .hamb .menu-btn:checked ~ .menu {
+  max-height: 260px;
+}
+.header nav .hamb .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+.header nav .hamb .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+.header nav .hamb .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+.header nav .hamb .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header nav .hamb .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+@media screen and (max-width: 800px) {
+  .header nav .hamb {
+    display: block;
+    border: 1px solid red;
+  }
+}
+.header nav div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.header nav div a {
+  font-size: 0.9rem;
+  color: #fff;
+}
+.header nav .logo,
+.header nav .action-items {
+  flex: 1 1 0;
+}
+.header nav .logo img {
+  width: 103px;
+}
+.header nav .navigation {
+  padding: 0 10px;
+}
+.header nav .navigation a {
+  padding: 0 10px;
+}
+.header nav .action-items {
+  justify-content: flex-end;
+}
+.header nav .action-items a .buynow {
+  background-color: #fff;
+  border-radius: 6px;
+  margin-left: 10px;
+  padding: 6px 12px 6px 6px;
+}
+.header nav .action-items a .buynow h4 {
+  color: #162c5b;
+  font-size: 0.8rem;
+  font-weight: 400;
+  padding-left: 6px;
+}
+.header nav .action-items a .buynow h4 i {
+  color: #162c5b;
+  padding-right: 6px;
+}
+@media screen and (max-width: 800px) {
+  .header header nav .navigation {
+    display: none;
+  }
+}
+
+/*  Responsive menu  */
+.hamb .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+.hamb .menu-icon .navicon {
+  background: white;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background 0.2s ease-out;
+  width: 18px;
+}
+.hamb .menu-icon .navicon:before,
+.hamb .menu-icon .navicon:after {
+  background: white;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+}
+.hamb .menu-icon .navicon:before {
+  top: 5px;
+}
+.hamb .menu-icon .navicon:after {
+  top: -5px;
+}
+.hamb .menu-btn {
+  display: none;
+}
+.hamb .menu-btn:checked ~ .menu {
+  max-height: 260px;
+}
+.hamb .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+.hamb .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+.hamb .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+.hamb .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.hamb .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+@media screen and (max-width: 800px) {
+  .hamb {
+    display: block;
+  }
+}
 /* Box sizing rules */
 *,
 *::before,
@@ -44,7 +239,7 @@ h1,
 h2,
 h3,
 p {
-  color: #162c5b;
+  color: color(text, 1);
 }
 
 a {
@@ -55,69 +250,12 @@ body {
   font-family: "Inter", sans-serif;
 }
 
+/*.   Mixins.   */
+/*    Functions    */
+/*    Variables   */
 .space {
   width: 100%;
   height: 90px;
-}
-
-/*  Header menu  */
-.header {
-  position: relative;
-  background-color: #038aff;
-  width: 100%;
-}
-.header header {
-  margin: 0 auto;
-  max-width: 1140px;
-  width: 100%;
-  padding: 16px 16px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-}
-.header nav {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-}
-.header nav div {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-}
-.header nav div a {
-  font-size: 0.9rem;
-  color: white;
-}
-.header nav .logo,
-.header nav .action-items {
-  flex: 1 1 0;
-}
-.header nav .logo img {
-  width: 103px;
-}
-.header nav .navigation {
-  padding: 0 10px;
-}
-.header nav .navigation a {
-  padding: 0 10px;
-}
-.header nav .action-items {
-  justify-content: flex-end;
-}
-.header nav .action-items a .buynow {
-  background-color: white;
-  border-radius: 6px;
-  margin-left: 10px;
-  padding: 6px 12px 6px 6px;
-}
-.header nav .action-items a .buynow h4 {
-  color: #162c5b;
-  font-size: 0.8rem;
-  font-weight: 400;
-  padding-left: 6px;
-}
-.header nav .action-items a .buynow h4 i {
-  color: #162c5b;
-  padding-right: 6px;
 }
 
 /*  Hero section  */
@@ -130,7 +268,7 @@ body {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -70px; /* Keep a fixed pixel value */
+  bottom: -70px;
   width: 100vw;
   height: 70px;
   z-index: 10;
@@ -334,8 +472,81 @@ body {
   }
 }
 
+.tools {
+  width: 100%;
+  padding: 130px 1rem 60px;
+}
+.tools .container {
+  width: min(1140px, 100%);
+  margin: 0 auto;
+}
+.tools .container .flex {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+.tools .container .flex .box {
+  border: 1px solid red;
+  flex: 1;
+}
+.tools .container .flex .box:last-child {
+  padding: 38px;
+}
+.tools .container .flex .box .barra {
+  padding: 34px;
+  border-radius: 12px;
+  border: 1px solid #e8ebf2;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 1px 4px;
+}
+.tools .container .flex .box .barra h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  padding-bottom: 10px;
+}
+.tools .container .flex .box .barra .bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #febd3d;
+}
+.tools .container .flex .box .barra .bar .text {
+  font-size: 0.9rem;
+}
+.tools .container .flex .box .barra .bar .time {
+  color: #718097;
+  font-size: 0.9rem;
+}
+.tools .container .flex .box .barra .bar .time i {
+  padding-left: 6px;
+  color: #718097;
+}
+.tools .container .flex .box .info h2 {
+  font-size: 1.9rem;
+  font-weight: 500;
+  padding: 30px 0 30px;
+}
+.tools .container .flex .box .info p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  font-weight: 400;
+  color: #718097;
+}
+.tools .container .flex .box .info .label {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 50px;
+  background-color: #febd3d;
+  color: white;
+}
+
 .features {
   width: 100%;
+  padding: 0 1rem;
 }
 .features .container {
   width: min(1140px, 100%);
@@ -355,6 +566,9 @@ body {
   flex-wrap: wrap;
   align-items: center;
   padding: 1rem;
+}
+.features .container .bflex .bbox:first-child {
+  padding: 38px;
 }
 .features .container .bflex .bbox .play {
   position: absolute;
@@ -403,6 +617,7 @@ body {
 
 .technology {
   width: 100%;
+  padding: 0 1rem;
 }
 .technology .container {
   width: min(1140px, 100%);
@@ -418,6 +633,9 @@ body {
 .technology .container .flex-box .sbox {
   flex: 1;
   padding: 1rem;
+}
+.technology .container .flex-box .sbox:last-child {
+  padding: 38px;
 }
 .technology .container .flex-box .sbox .grid {
   display: grid;
@@ -626,6 +844,7 @@ body {
 
 .easy {
   width: 100%;
+  padding: 0 1rem;
 }
 .easy .container {
   width: min(1140px, 100%);
@@ -641,6 +860,9 @@ body {
 .easy .container .flexbox .box {
   flex: 1;
   position: relative;
+}
+.easy .container .flexbox .box:first-child {
+  padding: 38px;
 }
 .easy .container .flexbox .box .logos {
   padding-top: 40px;
@@ -745,8 +967,19 @@ body {
 
 .awards {
   width: 100%;
-  padding: 90px 0;
+  padding: 90px 1rem;
+  position: relative;
   background-color: #fafbff;
+}
+.awards::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -70px;
+  width: 100vw;
+  height: 70px;
+  z-index: 10;
+  background: linear-gradient(to right bottom, #fafbff 50%, transparent 50%);
 }
 .awards .container {
   width: min(1140px, 100%);
@@ -773,55 +1006,84 @@ body {
   font-weight: 500;
   padding-top: 26px;
 }
-.awards .container .flexbox .bar .cards-carousel {
+.awards .container .flexbox .bar .items {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   width: 100%;
   padding: 50px 0;
 }
-.awards .container .flexbox .bar .cards-carousel .card {
+.awards .container .flexbox .bar .items .item {
   overflow: hidden;
-  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   padding: 2.2rem 1.6rem;
+  transition: all 0.2s ease;
   border-radius: 12px;
   border: 1px solid #e8ebf2;
   box-shadow: rgba(0, 0, 0, 0.06) 0px 1px 4px;
 }
-.awards .container .flexbox .bar .cards-carousel .card .stars {
+.awards .container .flexbox .bar .items .item:hover {
+  transform: translateY(-28px);
+}
+.awards .container .flexbox .bar .items .item .stars {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   color: #718097;
-  padding: 30px 0;
+  padding: 30px 0 0;
 }
-.awards .container .flexbox .bar .cards-carousel .card .stars :not(:last-child) {
+.awards .container .flexbox .bar .items .item .stars :not(:last-child) {
   color: #febd3d;
 }
-.awards .container .flexbox .bar .cards-carousel .card .stars i {
+.awards .container .flexbox .bar .items .item .stars i {
   font-size: 0.8rem;
   padding: 0 2px;
 }
-.awards .container .flexbox .bar .cards-carousel .card .airbnb {
+.awards .container .flexbox .bar .items .item .airbnb {
   width: 120px;
 }
-.awards .container .flexbox .bar .cards-carousel .card .text {
+.awards .container .flexbox .bar .items .item .amazon {
+  width: 110px;
+}
+.awards .container .flexbox .bar .items .item .slack {
+  width: 120px;
+}
+.awards .container .flexbox .bar .items .item .spotify {
+  width: 134px;
+}
+.awards .container .flexbox .bar .items .item .texto {
+  text-align: center;
+  padding-top: 24px;
+}
+.awards .container .flexbox .bar .items .item .texto p {
+  font-size: 0.85rem;
+  color: #718097;
+}
+.awards .container .flexbox .bar .items .item .text {
   text-align: center;
 }
-.awards .container .flexbox .bar .cards-carousel .card .text h3 {
+.awards .container .flexbox .bar .items .item .text h3 {
   font-size: 0.85rem;
 }
-.awards .container .flexbox .bar .cards-carousel .card .text p {
+.awards .container .flexbox .bar .items .item .text p {
   font-size: 0.85rem;
+  color: #718097;
+}
+.awards .container .flexbox .bar .items .item .learn {
+  border-bottom: 2px solid #162c5b;
+}
+.awards .container .flexbox .bar .items .item .learn h3 {
+  font-size: 0.8rem;
+  color: #162c5b;
+  padding-bottom: 3px;
 }
 
 .answers {
   width: 100%;
-  padding: 90px 0;
+  padding: 90px 1rem;
 }
 .answers .container {
   width: min(1140px, 100%);
@@ -886,7 +1148,7 @@ body {
 
 .project {
   width: 100%;
-  padding: 60px 0;
+  padding: 60px 1rem;
 }
 .project .container {
   width: min(1140px, 100%);
@@ -933,14 +1195,14 @@ body {
 footer {
   position: relative;
   width: 100%;
-  padding: 90px 0 0;
+  padding: 90px 1rem;
   background-color: #161348;
 }
 footer::before {
   content: "";
   position: absolute;
   left: 0;
-  top: -70px; /* Keep a fixed pixel value */
+  top: -70px;
   width: 100vw;
   height: 70px;
   z-index: 10;
@@ -950,7 +1212,6 @@ footer::before {
 footer .container {
   width: min(1140px, 100%);
   margin: 0 auto;
-  padding: 0 1rem;
 }
 footer .container .brilliant {
   width: 100%;
