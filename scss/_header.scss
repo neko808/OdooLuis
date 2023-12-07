@@ -33,6 +33,7 @@ $color: (
     align-items: center;
     .menu {
       visibility: hidden;
+      display: none;
     }
     .menu .overlay {
       position: absolute;
@@ -100,12 +101,6 @@ $color: (
         top: 0;
       }
     }
-    @media screen and (max-width: 800px) {
-      .hamb {
-        display: block;
-        border: 1px solid red;
-      }
-    }
     div {
       display: flex;
       flex-wrap: wrap;
@@ -143,10 +138,9 @@ $color: (
             font-size: 0.8rem;
             font-weight: 400;
             padding-left: 6px;
-            i {
-              color: color(text, 1);
-              padding-right: 6px;
-            }
+          }
+          img {
+            width: 17px;
           }
         }
       }
@@ -157,6 +151,18 @@ $color: (
       nav {
         .navigation {
           display: none;
+        }
+        .action-items {
+          flex: 1 0 20%;
+        }
+        .logo {
+          width: 90px;
+          img {
+            width: 90px;
+          }
+        }
+        .hamb {
+          display: block;
         }
       }
     }

@@ -20,6 +20,7 @@
 }
 .header nav .menu {
   visibility: hidden;
+  display: none;
 }
 .header nav .menu .overlay {
   position: absolute;
@@ -86,12 +87,6 @@
 .header nav .hamb .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
   top: 0;
 }
-@media screen and (max-width: 800px) {
-  .header nav .hamb {
-    display: block;
-    border: 1px solid red;
-  }
-}
 .header nav div {
   display: flex;
   flex-wrap: wrap;
@@ -129,13 +124,24 @@
   font-weight: 400;
   padding-left: 6px;
 }
-.header nav .action-items a .buynow h4 i {
-  color: #162c5b;
-  padding-right: 6px;
+.header nav .action-items a .buynow img {
+  width: 17px;
 }
 @media screen and (max-width: 800px) {
   .header header nav .navigation {
     display: none;
+  }
+  .header header nav .action-items {
+    flex: 1 0 20%;
+  }
+  .header header nav .logo {
+    width: 90px;
+  }
+  .header header nav .logo img {
+    width: 90px;
+  }
+  .header header nav .hamb {
+    display: block;
   }
 }
 
@@ -355,7 +361,7 @@ body {
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: 250px;
+  min-height: 250px;
   padding: 24px;
   border-radius: 12px;
   background-color: #162c5b;
@@ -462,13 +468,53 @@ body {
   font-size: 0.9rem;
 }
 @media screen and (max-width: 480px) {
+  .hero .container .flexbox {
+    padding-top: 60px;
+  }
   .hero .container .flexbox .box {
     flex: 1 0 100%;
+  }
+  .hero .container .flexbox .box:first-child {
+    justify-content: center;
+    text-align: center;
   }
   .hero .container .flexbox .box .card-wrapper {
     max-width: 440px;
     width: 100%;
     height: auto;
+  }
+  .hero .container .flexbox .box .card-wrapper .card-info .card-image {
+    min-height: 226px;
+    padding: 20px;
+  }
+  .hero .container .flexbox .box .card-wrapper .card-info .card-image .info .number h2 {
+    font-size: 1.2rem;
+  }
+  .hero .container .flexbox .box h1 {
+    font-size: 2.3rem;
+    text-align: center;
+    width: min(100%, 250px);
+  }
+  .hero .container .flexbox .box .trust {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 30px;
+  }
+  .hero .container .flexbox .box .trust .logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .hero .container .flexbox .box .trust .logos .logo {
+    width: 110px;
+    padding: 0;
+  }
+  .hero .container .flexbox .box .trust h3 {
+    padding-top: 30px;
+    padding-bottom: 22px;
   }
 }
 
@@ -487,8 +533,10 @@ body {
   gap: 1rem;
 }
 .tools .container .flex .box {
-  border: 1px solid red;
   flex: 1;
+}
+.tools .container .flex .box:first-child {
+  transform: translateY(38px);
 }
 .tools .container .flex .box:last-child {
   padding: 38px;
@@ -505,6 +553,8 @@ body {
   padding-bottom: 10px;
 }
 .tools .container .flex .box .barra .bar {
+  width: 100%;
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -512,8 +562,42 @@ body {
   padding-bottom: 10px;
   border-bottom: 2px solid #febd3d;
 }
+.tools .container .flex .box .barra .bar .popup {
+  display: none;
+  position: absolute;
+  width: min(430px, 100%);
+  top: -300%;
+  right: -40%;
+  z-index: 10;
+}
+.tools .container .flex .box .barra .bar .popup .play {
+  position: absolute;
+  cursor: pointer;
+  top: 36px;
+  left: 36px;
+  z-index: 10;
+  padding: 6px 14px;
+  border-radius: 4px;
+  background-color: white;
+}
+.tools .container .flex .box .barra .bar .popup .play h4 {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+.tools .container .flex .box .barra .bar .popup .play h4 i {
+  padding-right: 10px;
+}
+.tools .container .flex .box .barra .bar .popup .video {
+  border-radius: 12px;
+  border: 1px solid #e8ebf2;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 1px 4px;
+}
+.tools .container .flex .box .barra .bar:hover .popup {
+  display: block;
+}
 .tools .container .flex .box .barra .bar .text {
   font-size: 0.9rem;
+  user-select: none;
 }
 .tools .container .flex .box .barra .bar .time {
   color: #718097;
@@ -543,10 +627,25 @@ body {
   background-color: #febd3d;
   color: white;
 }
+@media screen and (max-width: 800px) {
+  .tools .container .flex {
+    gap: 0;
+  }
+  .tools .container .flex .box {
+    flex: 1 0 100%;
+  }
+  .tools .container .flex .box.pad1 {
+    order: 2;
+  }
+  .tools .container .flex .box.pad2 {
+    padding: 18px;
+    order: 1;
+  }
+}
 
 .features {
   width: 100%;
-  padding: 0 1rem;
+  padding: 90px 1rem;
 }
 .features .container {
   width: min(1140px, 100%);
@@ -557,7 +656,6 @@ body {
   flex-wrap: wrap;
   align-items: center;
   width: 100%;
-  height: 700px;
 }
 .features .container .bflex .bbox {
   position: relative;
@@ -613,6 +711,14 @@ body {
   border-radius: 50px;
   background-color: #5ccaa7;
   color: white;
+}
+@media screen and (max-width: 800px) {
+  .features .container .bflex .bbox {
+    flex: 1 0 100%;
+  }
+  .features .container .bflex .bbox:first-child {
+    padding: 18px;
+  }
 }
 
 .technology {
@@ -841,6 +947,21 @@ body {
   color: #038aff;
   font-size: 0.9rem;
 }
+@media screen and (max-width: 800px) {
+  .technology .container .flex-box {
+    height: auto;
+  }
+  .technology .container .flex-box .sbox {
+    flex: 1 0 100%;
+  }
+  .technology .container .flex-box .sbox.pad1 {
+    order: 2;
+  }
+  .technology .container .flex-box .sbox.pad2 {
+    order: 1;
+    padding: 18px;
+  }
+}
 
 .easy {
   width: 100%;
@@ -916,6 +1037,29 @@ body {
   background-color: #febd3d;
   color: white;
 }
+@media screen and (max-width: 800px) {
+  .easy .container {
+    padding-bottom: 90px;
+  }
+  .easy .container .flexbox {
+    height: auto;
+  }
+  .easy .container .flexbox .box {
+    flex: 1 0 100%;
+  }
+  .easy .container .flexbox .box:first-child {
+    padding: 18px;
+  }
+  .easy .container .flexbox .box .logos {
+    padding-top: 40px;
+  }
+  .easy .container .flexbox .box .logos .appstore,
+  .easy .container .flexbox .box .logos .playstore {
+    width: 150px;
+    margin-left: 0;
+    display: inline-block;
+  }
+}
 
 .infinite {
   width: 100%;
@@ -964,7 +1108,6 @@ body {
 .infinite .container .barra .flexbar .bar .button i {
   color: #162c5b;
 }
-
 .awards {
   width: 100%;
   padding: 90px 1rem;
