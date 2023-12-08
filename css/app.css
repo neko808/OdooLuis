@@ -259,11 +259,215 @@ body {
 /*.   Mixins.   */
 /*    Functions    */
 /*    Variables   */
-.space {
+/*    Functions    */
+/*    Variables   */
+.tools {
   width: 100%;
-  height: 90px;
+  padding: 130px 1rem 60px;
+}
+.tools .container {
+  width: min(1140px, 100%);
+  margin: 0 auto;
+}
+.tools .container .flex {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+.tools .container .flex .box {
+  flex: 1;
+}
+.tools .container .flex .box:first-child {
+  transform: translateY(38px);
+}
+.tools .container .flex .box:last-child {
+  padding: 38px;
+}
+.tools .container .flex .box .barra {
+  padding: 34px;
+  border-radius: 12px;
+  border: 1px solid #e8ebf2;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 1px 4px;
+}
+.tools .container .flex .box .barra h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  padding-bottom: 10px;
+}
+.tools .container .flex .box .barra .bar {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #febd3d;
+}
+.tools .container .flex .box .barra .bar .popup {
+  display: none;
+  position: absolute;
+  width: min(430px, 100%);
+  top: -300%;
+  right: -40%;
+  z-index: 10;
+}
+.tools .container .flex .box .barra .bar .popup .play {
+  position: absolute;
+  cursor: pointer;
+  top: 36px;
+  left: 36px;
+  z-index: 10;
+  padding: 6px 14px;
+  border-radius: 4px;
+  background-color: white;
+}
+.tools .container .flex .box .barra .bar .popup .play h4 {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+.tools .container .flex .box .barra .bar .popup .play h4 i {
+  padding-right: 10px;
+}
+.tools .container .flex .box .barra .bar .popup .video {
+  border-radius: 12px;
+  border: 1px solid #e8ebf2;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 1px 4px;
+}
+.tools .container .flex .box .barra .bar:hover .popup {
+  display: block;
+}
+.tools .container .flex .box .barra .bar .text {
+  font-size: 0.9rem;
+  user-select: none;
+}
+.tools .container .flex .box .barra .bar .time {
+  color: #718097;
+  font-size: 0.9rem;
+}
+.tools .container .flex .box .barra .bar .time i {
+  padding-left: 6px;
+  color: #718097;
+}
+.tools .container .flex .box .info h2 {
+  font-size: 1.9rem;
+  font-weight: 500;
+  padding: 30px 0 30px;
+}
+.tools .container .flex .box .info p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  font-weight: 400;
+  color: #718097;
+}
+.tools .container .flex .box .info .label {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 50px;
+  background-color: #febd3d;
+  color: white;
+}
+@media screen and (max-width: 800px) {
+  .tools .container .flex {
+    gap: 0;
+  }
+  .tools .container .flex .box {
+    flex: 1 0 100%;
+  }
+  .tools .container .flex .box.pad1 {
+    order: 2;
+  }
+  .tools .container .flex .box.pad2 {
+    padding: 18px;
+    order: 1;
+  }
 }
 
+/*    Functions    */
+/*    Variables   */
+.features {
+  width: 100%;
+  padding: 90px 1rem;
+}
+.features .container {
+  width: min(1140px, 100%);
+  margin: 0 auto;
+}
+.features .container .bflex {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+}
+.features .container .bflex .bbox {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 1rem;
+}
+.features .container .bflex .bbox:first-child {
+  padding: 38px;
+}
+.features .container .bflex .bbox .play {
+  position: absolute;
+  cursor: pointer;
+  top: 36px;
+  left: 36px;
+  z-index: 10;
+  padding: 6px 14px;
+  border-radius: 4px;
+  background-color: white;
+}
+.features .container .bflex .bbox .play h4 {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+.features .container .bflex .bbox .play h4 i {
+  padding-right: 10px;
+}
+.features .container .bflex .bbox h3 {
+  font-weight: 500;
+  padding: 30px 0 60px;
+  line-height: 2;
+}
+.features .container .bflex .bbox p {
+  width: 100%;
+  color: #5ccaa7;
+  padding-bottom: 14px;
+}
+.features .container .bflex .bbox p i {
+  color: #5ccaa7;
+  padding-right: 10px;
+}
+.features .container .bflex .bbox img {
+  border-radius: 12px;
+  position: relative;
+}
+.features .container .bflex .bbox .label {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 50px;
+  background-color: #5ccaa7;
+  color: white;
+}
+@media screen and (max-width: 800px) {
+  .features .container .bflex .bbox {
+    flex: 1 0 100%;
+  }
+  .features .container .bflex .bbox:first-child {
+    padding: 18px;
+  }
+}
+
+/*    Functions    */
+/*    Variables   */
 /*  Hero section  */
 .hero {
   width: 100%;
@@ -440,7 +644,7 @@ body {
   display: inline-block;
   padding: 14px 18px;
   border-radius: 6px;
-  color: black;
+  color: #162c5b;
   background-color: white;
 }
 .hero .container .flexbox .box .barra .button i {
@@ -466,6 +670,19 @@ body {
 .hero .container .flexbox .box h3 {
   font-weight: 400;
   font-size: 0.9rem;
+}
+@media screen and (max-width: 993px) {
+  .hero .container .flexbox .box .trust h3 {
+    padding-bottom: 16px;
+  }
+  .hero .container .flexbox .box .trust .logos {
+    gap: 0rem;
+  }
+  .hero .container .flexbox .box .trust .logos .logo {
+    width: 110px;
+    padding-right: 23px;
+    padding-left: 0;
+  }
 }
 @media screen and (max-width: 480px) {
   .hero .container .flexbox {
@@ -518,59 +735,43 @@ body {
   }
 }
 
-.tools {
+/*    Functions    */
+/*    Variables   */
+/*  Easy section  */
+.easy {
   width: 100%;
-  padding: 130px 1rem 60px;
+  padding: 0 1rem;
 }
-.tools .container {
+.easy .container {
   width: min(1140px, 100%);
   margin: 0 auto;
 }
-.tools .container .flex {
+.easy .container .flexbox {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 1rem;
+  width: 100%;
+  height: 700px;
 }
-.tools .container .flex .box {
+.easy .container .flexbox .box {
   flex: 1;
+  position: relative;
 }
-.tools .container .flex .box:first-child {
-  transform: translateY(38px);
-}
-.tools .container .flex .box:last-child {
+.easy .container .flexbox .box:first-child {
   padding: 38px;
 }
-.tools .container .flex .box .barra {
-  padding: 34px;
-  border-radius: 12px;
-  border: 1px solid #e8ebf2;
-  box-shadow: rgba(0, 0, 0, 0.06) 0px 1px 4px;
+.easy .container .flexbox .box .logos {
+  padding-top: 40px;
 }
-.tools .container .flex .box .barra h3 {
-  font-size: 1rem;
-  font-weight: 500;
-  padding-bottom: 10px;
+.easy .container .flexbox .box .logos .appstore,
+.easy .container .flexbox .box .logos .playstore {
+  width: min(150px, 100%);
+  display: inline-block;
 }
-.tools .container .flex .box .barra .bar {
-  width: 100%;
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding-top: 30px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid #febd3d;
+.easy .container .flexbox .box .logos .playstore {
+  margin-left: 20px;
 }
-.tools .container .flex .box .barra .bar .popup {
-  display: none;
-  position: absolute;
-  width: min(430px, 100%);
-  top: -300%;
-  right: -40%;
-  z-index: 10;
-}
-.tools .container .flex .box .barra .bar .popup .play {
+.easy .container .flexbox .box .play {
   position: absolute;
   cursor: pointer;
   top: 36px;
@@ -580,45 +781,29 @@ body {
   border-radius: 4px;
   background-color: white;
 }
-.tools .container .flex .box .barra .bar .popup .play h4 {
+.easy .container .flexbox .box .play h4 {
   font-size: 0.8rem;
   font-weight: 500;
 }
-.tools .container .flex .box .barra .bar .popup .play h4 i {
+.easy .container .flexbox .box .play h4 i {
   padding-right: 10px;
 }
-.tools .container .flex .box .barra .bar .popup .video {
+.easy .container .flexbox .box img {
   border-radius: 12px;
-  border: 1px solid #e8ebf2;
-  box-shadow: rgba(0, 0, 0, 0.06) 0px 1px 4px;
+  position: relative;
 }
-.tools .container .flex .box .barra .bar:hover .popup {
-  display: block;
-}
-.tools .container .flex .box .barra .bar .text {
-  font-size: 0.9rem;
-  user-select: none;
-}
-.tools .container .flex .box .barra .bar .time {
-  color: #718097;
-  font-size: 0.9rem;
-}
-.tools .container .flex .box .barra .bar .time i {
-  padding-left: 6px;
-  color: #718097;
-}
-.tools .container .flex .box .info h2 {
+.easy .container .flexbox .box h2 {
   font-size: 1.9rem;
   font-weight: 500;
   padding: 30px 0 30px;
 }
-.tools .container .flex .box .info p {
+.easy .container .flexbox .box p {
   font-size: 1.1rem;
   line-height: 1.8;
   font-weight: 400;
   color: #718097;
 }
-.tools .container .flex .box .info .label {
+.easy .container .flexbox .box .label {
   display: inline-block;
   font-size: 0.8rem;
   font-weight: 600;
@@ -628,99 +813,353 @@ body {
   color: white;
 }
 @media screen and (max-width: 800px) {
-  .tools .container .flex {
-    gap: 0;
+  .easy .container {
+    padding-bottom: 90px;
   }
-  .tools .container .flex .box {
+  .easy .container .flexbox {
+    height: auto;
+  }
+  .easy .container .flexbox .box {
     flex: 1 0 100%;
   }
-  .tools .container .flex .box.pad1 {
-    order: 2;
-  }
-  .tools .container .flex .box.pad2 {
+  .easy .container .flexbox .box:first-child {
     padding: 18px;
-    order: 1;
+  }
+  .easy .container .flexbox .box .logos {
+    padding-top: 40px;
+  }
+  .easy .container .flexbox .box .logos .appstore,
+  .easy .container .flexbox .box .logos .playstore {
+    width: 150px;
+    margin-left: 0;
+    display: inline-block;
   }
 }
 
-.features {
+/*    Functions    */
+/*    Variables   */
+/*  Project section  */
+.project {
   width: 100%;
-  padding: 90px 1rem;
+  padding: 60px 1rem;
 }
-.features .container {
+.project .container {
   width: min(1140px, 100%);
   margin: 0 auto;
 }
-.features .container .bflex {
+.project .container .flex {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  justify-content: center;
+}
+.project .container .flex .barra {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   width: 100%;
+  padding-bottom: 30px;
 }
-.features .container .bflex .bbox {
+.project .container .flex .barra .button {
+  display: inline-block;
+  padding: 14px 18px;
+  border-radius: 6px;
+  color: #fff;
+  background-color: #038aff;
+}
+.project .container .flex .barra .button i {
+  padding-left: 10px;
+}
+.project .container .flex .barra .learn {
+  display: inline-block;
+  padding: 14px 18px;
+  border-radius: 6px;
+  color: #162c5b;
+  background-color: #fff;
+}
+.project .container .flex .barra .learn i {
+  padding-left: 10px;
+}
+.project .container .flex h2 {
+  font-size: 1.9rem;
+  font-weight: 500;
+  padding: 30px 0 30px;
+}
+@media screen and (max-width: 800px) {
+  .project .container .flex h2 {
+    text-align: center;
+  }
+}
+
+/*    Functions    */
+/*    Variables   */
+/*  Awards section  */
+.awards {
+  width: 100%;
+  padding: 90px 1rem;
   position: relative;
-  flex: 1;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  padding: 1rem;
+  background-color: #fafbff;
 }
-.features .container .bflex .bbox:first-child {
-  padding: 38px;
-}
-.features .container .bflex .bbox .play {
+.awards::before {
+  content: "";
   position: absolute;
-  cursor: pointer;
-  top: 36px;
-  left: 36px;
-  z-index: 10;
-  padding: 6px 14px;
-  border-radius: 4px;
-  background-color: white;
+  left: 0;
+  bottom: -70px;
+  width: 100vw;
+  height: 70px;
+  z-index: -1;
+  background: linear-gradient(to right bottom, #fafbff 50%, transparent 50%);
 }
-.features .container .bflex .bbox .play h4 {
-  font-size: 0.8rem;
-  font-weight: 500;
+.awards .container {
+  width: min(1140px, 100%);
+  margin: 0 auto;
 }
-.features .container .bflex .bbox .play h4 i {
-  padding-right: 10px;
+.awards .container .flexbox {
+  display: flex;
+  flex-wrap: wrap;
 }
-.features .container .bflex .bbox h3 {
-  font-weight: 500;
-  padding: 30px 0 60px;
-  line-height: 2;
-}
-.features .container .bflex .bbox p {
+.awards .container .flexbox .bar {
   width: 100%;
-  color: #5ccaa7;
-  padding-bottom: 14px;
 }
-.features .container .bflex .bbox p i {
-  color: #5ccaa7;
-  padding-right: 10px;
-}
-.features .container .bflex .bbox img {
-  border-radius: 12px;
-  position: relative;
-}
-.features .container .bflex .bbox .label {
+.awards .container .flexbox .bar .label {
   display: inline-block;
   font-size: 0.8rem;
   font-weight: 600;
   padding: 5px 10px;
   border-radius: 50px;
-  background-color: #5ccaa7;
+  background-color: #038aff;
   color: white;
 }
+.awards .container .flexbox .bar h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  padding-top: 26px;
+}
+.awards .container .flexbox .bar .items {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  width: 100%;
+  padding: 50px 0;
+}
+.awards .container .flexbox .bar .items .item {
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2.2rem 1.6rem;
+  transition: all 0.2s ease;
+  border-radius: 12px;
+  border: 1px solid #e8ebf2;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 1px 4px;
+}
+.awards .container .flexbox .bar .items .item:hover {
+  transform: translateY(-28px);
+}
+.awards .container .flexbox .bar .items .item .stars {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: #718097;
+  padding: 30px 0 0;
+}
+.awards .container .flexbox .bar .items .item .stars :not(:last-child) {
+  color: #febd3d;
+}
+.awards .container .flexbox .bar .items .item .stars i {
+  font-size: 0.8rem;
+  padding: 0 2px;
+}
+.awards .container .flexbox .bar .items .item .airbnb {
+  width: 120px;
+}
+.awards .container .flexbox .bar .items .item .amazon {
+  width: 110px;
+}
+.awards .container .flexbox .bar .items .item .slack {
+  width: 120px;
+}
+.awards .container .flexbox .bar .items .item .spotify {
+  width: 134px;
+}
+.awards .container .flexbox .bar .items .item .texto {
+  text-align: center;
+  padding-top: 24px;
+}
+.awards .container .flexbox .bar .items .item .texto p {
+  font-size: 0.85rem;
+  color: #718097;
+}
+.awards .container .flexbox .bar .items .item .text {
+  text-align: center;
+}
+.awards .container .flexbox .bar .items .item .text h3 {
+  font-size: 0.85rem;
+}
+.awards .container .flexbox .bar .items .item .text p {
+  font-size: 0.85rem;
+  color: #718097;
+}
+.awards .container .flexbox .bar .items .item .learn {
+  border-bottom: 2px solid #162c5b;
+}
+.awards .container .flexbox .bar .items .item .learn h3 {
+  font-size: 0.8rem;
+  color: #162c5b;
+  padding-bottom: 3px;
+}
 @media screen and (max-width: 800px) {
-  .features .container .bflex .bbox {
-    flex: 1 0 100%;
-  }
-  .features .container .bflex .bbox:first-child {
-    padding: 18px;
+  .awards .container .flexbox .bar {
+    padding: 0 18px;
   }
 }
 
+/*    Functions    */
+/*    Variables   */
+/*  Infinite section  */
+.infinite {
+  width: 100%;
+  padding-bottom: 90px;
+}
+.infinite .container {
+  width: min(1140px, 100%);
+  margin: 0 auto;
+}
+.infinite .container .barra {
+  width: 100%;
+  padding: 60px;
+  border-radius: 0 80px 0 80px;
+  background-color: #161348;
+}
+.infinite .container .barra .flexbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.infinite .container .barra .flexbar .bar:first-child {
+  flex: 1 0 60%;
+}
+.infinite .container .barra .flexbar .bar:last-child {
+  flex: 1 0 40%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.infinite .container .barra .flexbar .bar h2 {
+  color: #e1e8f0;
+  padding-bottom: 20px;
+}
+.infinite .container .barra .flexbar .bar p {
+  color: #e1e8f0;
+}
+.infinite .container .barra .flexbar .bar .button {
+  padding: 8px 12px;
+  border-radius: 6px;
+  display: inline-block;
+  background-color: #e1e8f0;
+}
+.infinite .container .barra .flexbar .bar .button p,
+.infinite .container .barra .flexbar .bar .button i {
+  color: #162c5b;
+}
+@media screen and (max-width: 800px) {
+  .infinite .container .barra {
+    padding: 60px 33px;
+  }
+  .infinite .container .barra .flexbar .bar:first-child {
+    flex: 1 0 100%;
+    padding-bottom: 50px;
+  }
+  .infinite .container .barra .flexbar .bar:last-child {
+    flex: 1 0 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+}
+
+/*    Functions    */
+/*    Variables   */
+/*  Answers section  */
+.answers {
+  width: 100%;
+}
+.answers .container {
+  padding: 90px 1rem;
+  width: min(1140px, 100%);
+  margin: 0 auto;
+}
+.answers .container .title {
+  text-align: center;
+  padding-bottom: 50px;
+}
+.answers .container .title h2 {
+  font-size: 1.9rem;
+  font-weight: 500;
+  padding: 30px 0 30px;
+}
+.answers .container .title p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  font-weight: 400;
+  color: #718097;
+}
+.answers .container .flexbox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.answers .container .flexbox .bar {
+  flex: 1;
+}
+.answers .container .flexbox .bar .main-content {
+  width: 100%;
+}
+.answers .container .flexbox .bar .main-content .description-title {
+  font-size: 1rem;
+  color: #162c5b;
+  padding-left: 18px;
+  line-height: 55px;
+  transition: 0.3s;
+  margin-top: 2px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  border: 1px solid #e8ebf2;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 1px 4px;
+}
+.answers .container .flexbox .bar .main-content .description-title:hover {
+  cursor: pointer;
+}
+.answers .container .flexbox .bar .main-content .expand-collapse {
+  float: right;
+  margin-right: 8px;
+}
+.answers .container .flexbox .bar .main-content .description {
+  font-size: 0.9rem;
+  max-height: 0;
+  overflow: hidden;
+  margin-left: 0px;
+  padding-left: 10px;
+  transition: max-height 0.2s ease-out;
+}
+.answers .container .flexbox .bar .main-content .description p {
+  margin-top: 4px;
+}
+@media screen and (max-width: 800px) {
+  .answers .container {
+    padding: 0 1rem;
+  }
+  .answers .container .flexbox {
+    gap: 0;
+  }
+  .answers .container .flexbox .bar {
+    flex: 1 0 100%;
+  }
+}
+
+/*    Functions    */
+/*    Variables   */
+/*  Technology  */
 .technology {
   width: 100%;
   padding: 0 1rem;
@@ -857,8 +1296,8 @@ body {
   position: relative;
   top: 0;
   left: 0;
-  width: 46px;
-  height: 46px;
+  width: 38px;
+  height: 38px;
   background-color: #5ccaa7;
   border-radius: 50%;
 }
@@ -868,7 +1307,7 @@ body {
   position: absolute;
   text-align: center;
   width: 100%;
-  top: 26%;
+  top: 19%;
 }
 .technology .container .flex-box .sbox .grid .box4 {
   grid-column: 2/2;
@@ -954,6 +1393,22 @@ body {
   .technology .container .flex-box .sbox {
     flex: 1 0 100%;
   }
+  .technology .container .flex-box .sbox .grid .box1 .bar .name .center .text {
+    text-align: center;
+  }
+  .technology .container .flex-box .sbox .grid .box1 .bar .name p {
+    padding-left: 10px;
+  }
+  .technology .container .flex-box .sbox .grid .box3 .bar .text {
+    padding-top: 20px;
+    padding-left: 0;
+  }
+  .technology .container .flex-box .sbox .grid .box3 .bar .text h3 {
+    text-align: center;
+  }
+  .technology .container .flex-box .sbox .grid .box3 .bar .text p {
+    text-align: center;
+  }
   .technology .container .flex-box .sbox.pad1 {
     order: 2;
   }
@@ -963,378 +1418,9 @@ body {
   }
 }
 
-.easy {
-  width: 100%;
-  padding: 0 1rem;
-}
-.easy .container {
-  width: min(1140px, 100%);
-  margin: 0 auto;
-}
-.easy .container .flexbox {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  width: 100%;
-  height: 700px;
-}
-.easy .container .flexbox .box {
-  flex: 1;
-  position: relative;
-}
-.easy .container .flexbox .box:first-child {
-  padding: 38px;
-}
-.easy .container .flexbox .box .logos {
-  padding-top: 40px;
-}
-.easy .container .flexbox .box .logos .appstore,
-.easy .container .flexbox .box .logos .playstore {
-  width: min(150px, 100%);
-  display: inline-block;
-}
-.easy .container .flexbox .box .logos .playstore {
-  margin-left: 20px;
-}
-.easy .container .flexbox .box .play {
-  position: absolute;
-  cursor: pointer;
-  top: 36px;
-  left: 36px;
-  z-index: 10;
-  padding: 6px 14px;
-  border-radius: 4px;
-  background-color: white;
-}
-.easy .container .flexbox .box .play h4 {
-  font-size: 0.8rem;
-  font-weight: 500;
-}
-.easy .container .flexbox .box .play h4 i {
-  padding-right: 10px;
-}
-.easy .container .flexbox .box img {
-  border-radius: 12px;
-  position: relative;
-}
-.easy .container .flexbox .box h2 {
-  font-size: 1.9rem;
-  font-weight: 500;
-  padding: 30px 0 30px;
-}
-.easy .container .flexbox .box p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  font-weight: 400;
-  color: #718097;
-}
-.easy .container .flexbox .box .label {
-  display: inline-block;
-  font-size: 0.8rem;
-  font-weight: 600;
-  padding: 5px 10px;
-  border-radius: 50px;
-  background-color: #febd3d;
-  color: white;
-}
-@media screen and (max-width: 800px) {
-  .easy .container {
-    padding-bottom: 90px;
-  }
-  .easy .container .flexbox {
-    height: auto;
-  }
-  .easy .container .flexbox .box {
-    flex: 1 0 100%;
-  }
-  .easy .container .flexbox .box:first-child {
-    padding: 18px;
-  }
-  .easy .container .flexbox .box .logos {
-    padding-top: 40px;
-  }
-  .easy .container .flexbox .box .logos .appstore,
-  .easy .container .flexbox .box .logos .playstore {
-    width: 150px;
-    margin-left: 0;
-    display: inline-block;
-  }
-}
-
-.infinite {
-  width: 100%;
-  padding-bottom: 90px;
-}
-.infinite .container {
-  width: min(1140px, 100%);
-  margin: 0 auto;
-}
-.infinite .container .barra {
-  width: 100%;
-  padding: 60px;
-  border-radius: 0 80px 0 80px;
-  background-color: #161348;
-}
-.infinite .container .barra .flexbar {
-  display: flex;
-  align-items: center;
-}
-.infinite .container .barra .flexbar .bar {
-  position: relative;
-}
-.infinite .container .barra .flexbar .bar:first-child {
-  flex: 1 0 60%;
-}
-.infinite .container .barra .flexbar .bar:last-child {
-  flex: 1 0 40%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-}
-.infinite .container .barra .flexbar .bar h2 {
-  color: #e1e8f0;
-  padding-bottom: 20px;
-}
-.infinite .container .barra .flexbar .bar p {
-  color: #e1e8f0;
-}
-.infinite .container .barra .flexbar .bar .button {
-  padding: 8px 12px;
-  border-radius: 6px;
-  display: inline-block;
-  background-color: #e1e8f0;
-}
-.infinite .container .barra .flexbar .bar .button p,
-.infinite .container .barra .flexbar .bar .button i {
-  color: #162c5b;
-}
-.awards {
-  width: 100%;
-  padding: 90px 1rem;
-  position: relative;
-  background-color: #fafbff;
-}
-.awards::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -70px;
-  width: 100vw;
-  height: 70px;
-  z-index: 10;
-  background: linear-gradient(to right bottom, #fafbff 50%, transparent 50%);
-}
-.awards .container {
-  width: min(1140px, 100%);
-  margin: 0 auto;
-}
-.awards .container .flexbox {
-  display: flex;
-  flex-wrap: wrap;
-}
-.awards .container .flexbox .bar {
-  width: 100%;
-}
-.awards .container .flexbox .bar .label {
-  display: inline-block;
-  font-size: 0.8rem;
-  font-weight: 600;
-  padding: 5px 10px;
-  border-radius: 50px;
-  background-color: #038aff;
-  color: white;
-}
-.awards .container .flexbox .bar h3 {
-  font-size: 1rem;
-  font-weight: 500;
-  padding-top: 26px;
-}
-.awards .container .flexbox .bar .items {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  width: 100%;
-  padding: 50px 0;
-}
-.awards .container .flexbox .bar .items .item {
-  overflow: hidden;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 2.2rem 1.6rem;
-  transition: all 0.2s ease;
-  border-radius: 12px;
-  border: 1px solid #e8ebf2;
-  box-shadow: rgba(0, 0, 0, 0.06) 0px 1px 4px;
-}
-.awards .container .flexbox .bar .items .item:hover {
-  transform: translateY(-28px);
-}
-.awards .container .flexbox .bar .items .item .stars {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  color: #718097;
-  padding: 30px 0 0;
-}
-.awards .container .flexbox .bar .items .item .stars :not(:last-child) {
-  color: #febd3d;
-}
-.awards .container .flexbox .bar .items .item .stars i {
-  font-size: 0.8rem;
-  padding: 0 2px;
-}
-.awards .container .flexbox .bar .items .item .airbnb {
-  width: 120px;
-}
-.awards .container .flexbox .bar .items .item .amazon {
-  width: 110px;
-}
-.awards .container .flexbox .bar .items .item .slack {
-  width: 120px;
-}
-.awards .container .flexbox .bar .items .item .spotify {
-  width: 134px;
-}
-.awards .container .flexbox .bar .items .item .texto {
-  text-align: center;
-  padding-top: 24px;
-}
-.awards .container .flexbox .bar .items .item .texto p {
-  font-size: 0.85rem;
-  color: #718097;
-}
-.awards .container .flexbox .bar .items .item .text {
-  text-align: center;
-}
-.awards .container .flexbox .bar .items .item .text h3 {
-  font-size: 0.85rem;
-}
-.awards .container .flexbox .bar .items .item .text p {
-  font-size: 0.85rem;
-  color: #718097;
-}
-.awards .container .flexbox .bar .items .item .learn {
-  border-bottom: 2px solid #162c5b;
-}
-.awards .container .flexbox .bar .items .item .learn h3 {
-  font-size: 0.8rem;
-  color: #162c5b;
-  padding-bottom: 3px;
-}
-
-.answers {
-  width: 100%;
-  padding: 90px 1rem;
-}
-.answers .container {
-  width: min(1140px, 100%);
-  margin: 0 auto;
-}
-.answers .container .title {
-  text-align: center;
-  padding-bottom: 50px;
-}
-.answers .container .title h2 {
-  font-size: 1.9rem;
-  font-weight: 500;
-  padding: 30px 0 30px;
-}
-.answers .container .title p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  font-weight: 400;
-  color: #718097;
-}
-.answers .container .flexbox {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-.answers .container .flexbox .bar {
-  flex: 1;
-}
-.answers .container .flexbox .bar .main-content {
-  width: 100%;
-}
-.answers .container .flexbox .bar .main-content .description-title {
-  font-size: 1rem;
-  color: #162c5b;
-  padding-left: 18px;
-  line-height: 55px;
-  transition: 0.3s;
-  margin-top: 2px;
-  margin-bottom: 10px;
-  border-radius: 12px;
-  border: 1px solid #e8ebf2;
-  box-shadow: rgba(0, 0, 0, 0.06) 0px 1px 4px;
-}
-.answers .container .flexbox .bar .main-content .description-title:hover {
-  cursor: pointer;
-}
-.answers .container .flexbox .bar .main-content .expand-collapse {
-  float: right;
-  margin-right: 8px;
-}
-.answers .container .flexbox .bar .main-content .description {
-  font-size: 0.9rem;
-  max-height: 0;
-  overflow: hidden;
-  margin-left: 0px;
-  padding-left: 10px;
-  transition: max-height 0.2s ease-out;
-}
-.answers .container .flexbox .bar .main-content .description p {
-  margin-top: 4px;
-}
-
-.project {
-  width: 100%;
-  padding: 60px 1rem;
-}
-.project .container {
-  width: min(1140px, 100%);
-  margin: 0 auto;
-}
-.project .container .flex {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.project .container .flex .barra {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 100%;
-  padding-bottom: 30px;
-}
-.project .container .flex .barra .button {
-  display: inline-block;
-  padding: 14px 18px;
-  border-radius: 6px;
-  color: #fff;
-  background-color: #038aff;
-}
-.project .container .flex .barra .button i {
-  padding-left: 10px;
-}
-.project .container .flex .barra .learn {
-  display: inline-block;
-  padding: 14px 18px;
-  border-radius: 6px;
-  color: #162c5b;
-  background-color: #fff;
-}
-.project .container .flex .barra .learn i {
-  padding-left: 10px;
-}
-.project .container .flex h2 {
-  font-size: 1.9rem;
-  font-weight: 500;
-  padding: 30px 0 30px;
-}
-
+/*    Functions    */
+/*    Variables   */
+/*  Footer  */
 footer {
   position: relative;
   width: 100%;
@@ -1485,4 +1571,58 @@ footer .container .bottom-info .flexbox .bar .links ul li {
   font-size: 0.8rem;
   padding-left: 20px;
   color: #acaabf;
+}
+@media screen and (max-width: 800px) {
+  footer .container .info .flexbox .box1 {
+    flex: 1 0 100%;
+  }
+  footer .container .info .flexbox .box2 {
+    flex: 1 0 30%;
+    padding-top: 40px;
+  }
+  footer .container .info .flexbox .box3 {
+    flex: 1 0 30%;
+    padding-top: 40px;
+  }
+  footer .container .info .flexbox .box4 {
+    flex: 1 0 30%;
+    padding-top: 40px;
+  }
+  footer .container .bottom-info .flexbox .bar {
+    padding: 25px 0 0;
+    flex: 1 0 100%;
+  }
+  footer .container .bottom-info .flexbox .bar .copy {
+    text-align: center;
+  }
+  footer .container .bottom-info .flexbox .bar .links {
+    justify-content: center;
+  }
+  footer .container .bottom-info .flexbox .bar .links ul li {
+    padding: 0 20px;
+  }
+  footer .container .brilliant .flex .bar.text {
+    padding-bottom: 30px;
+  }
+  footer .container .brilliant .flex .bar.text h2 {
+    width: 100%;
+    text-align: center;
+  }
+  footer .container .brilliant .flex .bar.text p {
+    text-align: center;
+  }
+  footer .container .brilliant .flex .bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex: 1 0 100%;
+  }
+  footer .container .brilliant .flex .bar .barra {
+    justify-content: center;
+  }
+}
+
+.space {
+  width: 100%;
+  height: 90px;
 }

@@ -1,0 +1,101 @@
+@use "layout" as lt;
+
+/*    Functions    */
+
+@function color($elem, $variant) {
+  @return map-get(map-get($color, $elem), $variant);
+}
+
+/*    Variables   */
+
+$color: (
+  text: (
+    1: #162c5b,
+    2: #565678,
+    3: #ababc9,
+    soft: #718097,
+    footer: #acaabf,
+    1i: #fff,
+  ),
+  bg: (
+    hero: #038aff,
+    awards: #fafbff,
+    features: #5ccaa7,
+    tools: #febd3d,
+    3: #d2daf0,
+    infinite: #161348,
+    footer: #161348,
+    line-footer: #2f2c5b,
+    white: #fff,
+  ),
+);
+
+/*  Infinite section  */
+.infinite {
+  width: 100%;
+  padding-bottom: 90px;
+  .container {
+    width: min(1140px, 100%);
+    margin: 0 auto;
+    .barra {
+      width: 100%;
+      padding: 60px;
+      border-radius: 0 80px 0 80px;
+      background-color: color(bg, infinite);
+      .flexbar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        .bar {
+          &:first-child {
+            flex: 1 0 60%;
+          }
+          &:last-child {
+            flex: 1 0 40%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+          }
+          h2 {
+            color: lt.$soft-color;
+            padding-bottom: 20px;
+          }
+          p {
+            color: lt.$soft-color;
+          }
+          .button {
+            padding: 8px 12px;
+            border-radius: 6px;
+            display: inline-block;
+            background-color: lt.$soft-color;
+            p,
+            i {
+              color: color(text, 1);
+            }
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 800px) {
+    .container {
+      .barra {
+        padding: 60px 33px;
+        .flexbar {
+          .bar {
+            &:first-child {
+              flex: 1 0 100%;
+              padding-bottom: 50px;
+            }
+            &:last-child {
+              flex: 1 0 100%;
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: flex-end;
+            }
+          }
+        }
+      }
+    }
+  }
+}

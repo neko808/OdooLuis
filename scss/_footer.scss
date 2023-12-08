@@ -1,0 +1,273 @@
+@use "layout" as lt;
+
+/*    Functions    */
+
+@function color($elem, $variant) {
+  @return map-get(map-get($color, $elem), $variant);
+}
+
+/*    Variables   */
+
+$color: (
+  text: (
+    1: #162c5b,
+    2: #565678,
+    3: #ababc9,
+    soft: #718097,
+    footer: #acaabf,
+    1i: #fff,
+  ),
+  bg: (
+    hero: #038aff,
+    awards: #fafbff,
+    features: #5ccaa7,
+    tools: #febd3d,
+    3: #d2daf0,
+    infinite: #161348,
+    footer: #161348,
+    line-footer: #2f2c5b,
+    white: #fff,
+  ),
+);
+
+/*  Footer  */
+footer {
+  position: relative;
+  width: 100%;
+  padding: 90px 1rem;
+  background-color: color(bg, footer);
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -70px;
+    width: 100vw;
+    height: 70px;
+    z-index: 10;
+    transform: rotate(180deg);
+    background: linear-gradient(
+      to right bottom,
+      color(bg, footer) 50%,
+      transparent 50%
+    );
+  }
+  .container {
+    width: min(1140px, 100%);
+    margin: 0 auto;
+    .brilliant {
+      width: 100%;
+      padding: 0 0 50px 0;
+      border-bottom: 2px solid transparent;
+      border-image: linear-gradient(
+        0.25turn,
+        rgba(56, 2, 155, 0),
+        rgba(255, 0, 128),
+        rgba(56, 2, 155, 0)
+      );
+      border-image-slice: 1;
+      width: 100%;
+      .flex {
+        display: flex;
+        flex-wrap: wrap;
+        .buttons {
+          .barra {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            width: 100%;
+            padding-bottom: 30px;
+            .button {
+              font-size: 0.9rem;
+              display: inline-block;
+              padding: 10px 14px;
+              border-radius: 6px;
+              color: color(text, 1);
+              background-color: color(bg, white);
+              i {
+                padding-right: 10px;
+              }
+            }
+            .purchase {
+              font-size: 0.9rem;
+              display: inline-block;
+              padding: 10px 14px;
+              margin-left: 20px;
+              border-radius: 6px;
+              color: color(text, 1i);
+              background-color: color(bg, hero);
+            }
+          }
+        }
+        .text {
+          h2 {
+            color: color(text, 1i);
+          }
+          p {
+            color: color(text, footer);
+          }
+        }
+        .bar {
+          flex: 1;
+        }
+      }
+    }
+    .info {
+      width: 100%;
+      padding-top: 50px;
+      padding-bottom: 40px;
+      border-bottom: 2px solid transparent;
+      border-image: linear-gradient(
+        0.25turn,
+        rgba(56, 2, 155, 0),
+        rgba(38, 31, 148),
+        rgba(56, 2, 155, 0)
+      );
+      border-image-slice: 1;
+      width: 100%;
+      .flexbox {
+        display: flex;
+        flex-wrap: wrap;
+        .box {
+          h3 {
+            font-size: 1rem;
+            padding-bottom: 20px;
+            color: color(text, 1i);
+          }
+          ul {
+            li {
+              font-size: 0.8rem;
+              padding-bottom: 10px;
+              color: color(text, footer);
+            }
+          }
+        }
+        .box1 {
+          flex: 1 0 55%;
+          p {
+            width: min(300px, 100%);
+            color: color(text, footer);
+            font-size: 0.8rem;
+            font-weight: lt.$fw-400;
+            padding: 30px 0;
+          }
+          .logo {
+            width: 100px;
+          }
+          .social {
+            i {
+              color: color(text, footer);
+              padding-right: 16px;
+            }
+          }
+        }
+        .box2 {
+          flex: 1 0 15%;
+        }
+        .box3 {
+          flex: 1 0 15%;
+        }
+        .box4 {
+          flex: 1 0 15%;
+        }
+      }
+    }
+    .bottom-info {
+      width: 100%;
+      .flexbox {
+        display: flex;
+        flex-wrap: wrap;
+        .bar {
+          flex: 1;
+          padding: 40px 0 20px;
+          .copy {
+            font-size: 0.8rem;
+            color: color(text, footer);
+            span {
+              color: color(text, 1i);
+            }
+          }
+          .links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            ul {
+              display: flex;
+              flex-wrap: wrap;
+              align-items: center;
+              li {
+                font-size: 0.8rem;
+                padding-left: 20px;
+                color: color(text, footer);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 800px) {
+    .container {
+      .info {
+        .flexbox {
+          .box1 {
+            flex: 1 0 100%;
+          }
+          .box2 {
+            flex: 1 0 30%;
+            padding-top: 40px;
+          }
+          .box3 {
+            flex: 1 0 30%;
+            padding-top: 40px;
+          }
+          .box4 {
+            flex: 1 0 30%;
+            padding-top: 40px;
+          }
+        }
+      }
+      .bottom-info {
+        .flexbox {
+          .bar {
+            padding: 25px 0 0;
+            flex: 1 0 100%;
+            .copy {
+              text-align: center;
+            }
+            .links {
+              justify-content: center;
+              ul {
+                li {
+                  padding: 0 20px;
+                }
+              }
+            }
+          }
+        }
+      }
+      .brilliant {
+        .flex {
+          .bar.text {
+            padding-bottom: 30px;
+            h2 {
+              width: 100%;
+              text-align: center;
+            }
+            p {
+              text-align: center;
+            }
+          }
+          .bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            flex: 1 0 100%;
+            .barra {
+              justify-content: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}

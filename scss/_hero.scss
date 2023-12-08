@@ -1,0 +1,321 @@
+@use "layout" as lt;
+
+/*    Functions    */
+
+@function color($elem, $variant) {
+  @return map-get(map-get($color, $elem), $variant);
+}
+
+/*    Variables   */
+
+$color: (
+  text: (
+    1: #162c5b,
+    2: #565678,
+    3: #ababc9,
+    soft: #718097,
+    footer: #acaabf,
+    1i: #fff,
+  ),
+  bg: (
+    hero: #038aff,
+    awards: #fafbff,
+    features: #5ccaa7,
+    tools: #febd3d,
+    3: #d2daf0,
+    infinite: #161348,
+    footer: #161348,
+    line-footer: #2f2c5b,
+    white: #fff,
+  ),
+);
+
+/*  Hero section  */
+.hero {
+  width: 100%;
+  position: relative;
+  background-color: color(bg, hero);
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -70px;
+    width: 100vw;
+    height: 70px;
+    z-index: 10;
+    background: linear-gradient(
+      to right bottom,
+      color(bg, hero) 50%,
+      transparent 50%
+    );
+  }
+  .container {
+    width: min(1140px, 100%);
+    margin: 0 auto;
+    .flexbox {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      width: 100%;
+      min-height: 700px;
+      .box {
+        flex: 1;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 1rem;
+        &:nth-child(2) {
+          justify-content: center;
+        }
+        .trust {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          .logos {
+            display: flex;
+            flex-wrap: wrap;
+            .logo {
+              width: 110px;
+              padding: 0 10px;
+            }
+          }
+        }
+        .card-wrapper {
+          width: 440px;
+          height: 560px;
+          padding: 28px;
+          background-color: white;
+          border-radius: 16px 16px 80px 20px;
+          .card-info {
+            .top-info {
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: space-between;
+              align-items: center;
+              padding: 0 0 20px 0;
+              .addnew {
+                font-size: small;
+                padding: 4px 8px;
+                border-radius: 6px;
+                border: 1px solid color(text, soft);
+              }
+              h3 {
+                color: color(text, 1);
+              }
+              a {
+                color: color(text, 1);
+              }
+            }
+            .content {
+              width: 100%;
+              .box {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                padding: 20px 0 20px 0;
+                border-bottom: 1px solid lt.$soft-color;
+                .place {
+                  h3 {
+                    color: color(text, 1);
+                    padding-bottom: 6px;
+                  }
+                  p {
+                    color: color(text, soft);
+                    font-size: small;
+                  }
+                }
+              }
+            }
+            .card-image {
+              position: relative;
+              overflow: hidden;
+              width: 100%;
+              min-height: 250px;
+              padding: 24px;
+              border-radius: 12px;
+              background-color: color(text, 1);
+              box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+              &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: -130px;
+                width: 400px;
+                min-height: 300px;
+                background-image: url("../img/world_map.svg");
+                background-repeat: no-repeat;
+                z-index: 0;
+              }
+              .info {
+                position: relative;
+                z-index: 10;
+                .number {
+                  h3 {
+                    font-size: 0.7rem;
+                    text-transform: uppercase;
+                    padding-bottom: 10px;
+                  }
+                  h2 {
+                    font-size: 1.5rem;
+                  }
+                }
+                .details {
+                  width: 100%;
+                  .flex {
+                    display: flex;
+                    flex-wrap: wrap;
+                    div {
+                      flex: 1;
+                      h3 {
+                        color: lt.$text-white;
+                        font-size: 0.7rem;
+                        padding-bottom: 6px;
+                        text-transform: uppercase;
+                      }
+                      h4 {
+                        color: lt.$text-white;
+                        font-size: 0.95rem;
+                        font-weight: lt.$fw-400;
+                      }
+                    }
+                  }
+                }
+              }
+              .iconbar {
+                position: relative;
+                z-index: 10;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-between;
+                padding-bottom: 30px;
+                .mastercard {
+                  width: 40px;
+                }
+                .active {
+                  padding: 6px 8px;
+                  border-radius: 4px;
+                  background-color: #79c7a9;
+                  p {
+                    color: lt.$text-hero;
+                    font-size: 0.8rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .barra {
+          width: 100%;
+          padding-bottom: 30px;
+          .button {
+            display: inline-block;
+            padding: 14px 18px;
+            border-radius: 6px;
+            color: color(text, 1);
+            background-color: lt.$button-color;
+            i {
+              padding-left: 10px;
+            }
+          }
+        }
+
+        h1,
+        h2,
+        h3 {
+          color: lt.$text-hero;
+          line-height: 1.13;
+        }
+        h1 {
+          font-weight: 600;
+          font-size: clamp(2rem, 5vw, 3.8rem);
+          padding-bottom: 30px;
+        }
+        h2 {
+          font-weight: lt.$fw-400;
+          font-size: clamp(1rem, 3vw, 1.3rem);
+          line-height: 1.5;
+          padding-bottom: 30px;
+        }
+        h3 {
+          font-weight: lt.$fw-400;
+          font-size: 0.9rem;
+        }
+      }
+    }
+    @media screen and (max-width: 993px) {
+      .flexbox {
+        .box {
+          .trust {
+            h3 {
+              padding-bottom: 16px;
+            }
+            .logos {
+              gap: 0rem;
+              .logo {
+                width: 110px;
+                padding-right: 23px;
+                padding-left: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+    @media screen and (max-width: 480px) {
+      .flexbox {
+        padding-top: 60px;
+        .box {
+          flex: 1 0 100%;
+          &:first-child {
+            justify-content: center;
+            text-align: center;
+          }
+          .card-wrapper {
+            max-width: 440px;
+            width: 100%;
+            height: auto;
+            .card-info {
+              .card-image {
+                min-height: 226px;
+                padding: 20px;
+                .info {
+                  .number {
+                    h2 {
+                      font-size: 1.2rem;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          h1 {
+            font-size: 2.3rem;
+            text-align: center;
+            width: min(100%, 250px);
+          }
+          .trust {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            padding-bottom: 30px;
+            .logos {
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: center;
+              gap: 1rem;
+              .logo {
+                width: 110px;
+                padding: 0;
+              }
+            }
+            h3 {
+              padding-top: 30px;
+              padding-bottom: 22px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

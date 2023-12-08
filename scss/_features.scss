@@ -1,0 +1,114 @@
+@use "layout" as lt;
+
+/*    Functions    */
+
+@function color($elem, $variant) {
+  @return map-get(map-get($color, $elem), $variant);
+}
+
+/*    Variables   */
+
+$color: (
+  text: (
+    1: #162c5b,
+    2: #565678,
+    3: #ababc9,
+    soft: #718097,
+    footer: #acaabf,
+    1i: #fff,
+  ),
+  bg: (
+    hero: #038aff,
+    awards: #fafbff,
+    features: #5ccaa7,
+    tools: #febd3d,
+    3: #d2daf0,
+    infinite: #161348,
+    footer: #161348,
+    line-footer: #2f2c5b,
+    white: #fff,
+  ),
+);
+
+.features {
+  width: 100%;
+  padding: 90px 1rem;
+  .container {
+    width: min(1140px, 100%);
+    margin: 0 auto;
+    .bflex {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      width: 100%;
+      .bbox {
+        position: relative;
+        flex: 1;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 1rem;
+        &:first-child {
+          padding: 38px;
+        }
+        .play {
+          position: absolute;
+          cursor: pointer;
+          top: 36px;
+          left: 36px;
+          z-index: 10;
+          padding: 6px 14px;
+          border-radius: 4px;
+          background-color: lt.$button-color;
+          h4 {
+            font-size: 0.8rem;
+            font-weight: lt.$fw-500;
+            i {
+              padding-right: 10px;
+            }
+          }
+        }
+        h3 {
+          font-weight: lt.$fw-500;
+          padding: 30px 0 60px;
+          line-height: 2;
+        }
+
+        p {
+          width: 100%;
+          color: color(bg, features);
+          padding-bottom: 14px;
+          i {
+            color: color(bg, features);
+            padding-right: 10px;
+          }
+        }
+        img {
+          border-radius: 12px;
+          position: relative;
+        }
+        .label {
+          display: inline-block;
+          font-size: 0.8rem;
+          font-weight: lt.$fw-600;
+          padding: 5px 10px;
+          border-radius: 50px;
+          background-color: color(bg, features);
+          color: lt.$text-white;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 800px) {
+    .container {
+      .bflex {
+        .bbox {
+          flex: 1 0 100%;
+          &:first-child {
+            padding: 18px;
+          }
+        }
+      }
+    }
+  }
+}
