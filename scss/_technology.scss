@@ -57,6 +57,7 @@ $color: (
           .mybox {
             overflow: hidden;
             @include lt.shadow;
+            background-color: color(bg, white);
           }
           .box1 {
             grid-column: 1 / 1;
@@ -265,20 +266,24 @@ $color: (
           .grid {
             .box1 {
               .bar {
+                justify-content: center;
                 .name {
+                  justify-content: center;
                   .center {
                     .text {
                       text-align: center;
                     }
                   }
                   p {
-                    padding-left: 10px;
+                    text-align: center;
+                    padding-left: 0;
                   }
                 }
               }
             }
             .box3 {
               .bar {
+                justify-content: center;
                 .text {
                   padding-top: 20px;
                   padding-left: 0;

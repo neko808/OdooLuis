@@ -18,74 +18,26 @@
   flex-wrap: wrap;
   align-items: center;
 }
+.header nav .menu-icon {
+  position: relative;
+  z-index: 100;
+}
 .header nav .menu {
   visibility: hidden;
-  display: none;
-}
-.header nav .menu .overlay {
+  opacity: 0;
   position: absolute;
   top: 0;
   left: 0;
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  height: 400px;
+  transition: all 0.3s ease-in-out;
+  z-index: 100;
+}
+.header nav .menu.is-active {
   visibility: visible;
   opacity: 1;
-  padding-top: 100px;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
-}
-.header nav .hamb {
-  display: none;
-}
-.header nav .hamb .menu-icon {
-  cursor: pointer;
-  display: inline-block;
-  padding: 9px 0 5px 16px;
-  position: relative;
-  user-select: none;
-}
-.header nav .hamb .menu-icon .navicon {
-  background: white;
-  display: block;
-  height: 2px;
-  position: relative;
-  transition: background 0.2s ease-out;
-  width: 18px;
-}
-.header nav .hamb .menu-icon .navicon:before,
-.header nav .hamb .menu-icon .navicon:after {
-  background: white;
-  content: "";
-  display: block;
-  height: 100%;
-  position: absolute;
-  transition: all 0.2s ease-out;
-  width: 100%;
-}
-.header nav .hamb .menu-icon .navicon:before {
-  top: 5px;
-}
-.header nav .hamb .menu-icon .navicon:after {
-  top: -5px;
-}
-.header nav .hamb .menu-btn {
-  display: none;
-}
-.header nav .hamb .menu-btn:checked ~ .menu {
-  max-height: 260px;
-}
-.header nav .hamb .menu-btn:checked ~ .menu-icon .navicon {
-  background: transparent;
-}
-.header nav .hamb .menu-btn:checked ~ .menu-icon .navicon:before {
-  transform: rotate(-45deg);
-}
-.header nav .hamb .menu-btn:checked ~ .menu-icon .navicon:after {
-  transform: rotate(45deg);
-}
-.header nav .hamb .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
-.header nav .hamb .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
-  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
 }
 .header nav div {
   display: flex;
@@ -140,20 +92,17 @@
   .header header nav .logo img {
     width: 90px;
   }
-  .header header nav .hamb {
-    display: block;
-  }
 }
 
-/*  Responsive menu  */
-.hamb .menu-icon {
+/*  Responsive menu icon  */
+.menu-icon {
   cursor: pointer;
-  display: inline-block;
-  padding: 28px 20px;
+  display: none;
+  padding: 14px 10px;
   position: relative;
   user-select: none;
 }
-.hamb .menu-icon .navicon {
+.menu-icon .navicon {
   background: white;
   display: block;
   height: 2px;
@@ -161,8 +110,8 @@
   transition: background 0.2s ease-out;
   width: 18px;
 }
-.hamb .menu-icon .navicon:before,
-.hamb .menu-icon .navicon:after {
+.menu-icon .navicon:before,
+.menu-icon .navicon:after {
   background: white;
   content: "";
   display: block;
@@ -171,34 +120,40 @@
   transition: all 0.2s ease-out;
   width: 100%;
 }
-.hamb .menu-icon .navicon:before {
+.menu-icon .navicon:before {
   top: 5px;
 }
-.hamb .menu-icon .navicon:after {
+.menu-icon .navicon:after {
   top: -5px;
 }
-.hamb .menu-btn {
+
+.menu-btn {
   display: none;
 }
-.hamb .menu-btn:checked ~ .menu {
+
+.menu-btn:checked ~ .menu {
   max-height: 260px;
 }
-.hamb .menu-btn:checked ~ .menu-icon .navicon {
+
+.menu-btn:checked ~ .menu-icon .navicon {
   background: transparent;
 }
-.hamb .menu-btn:checked ~ .menu-icon .navicon:before {
+
+.menu-btn:checked ~ .menu-icon .navicon:before {
   transform: rotate(-45deg);
 }
-.hamb .menu-btn:checked ~ .menu-icon .navicon:after {
+
+.menu-btn:checked ~ .menu-icon .navicon:after {
   transform: rotate(45deg);
 }
-.hamb .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
-.hamb .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+
+.menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
   top: 0;
 }
 
 @media screen and (max-width: 800px) {
-  .hamb {
+  .menu-icon {
     display: block;
   }
 }
@@ -262,7 +217,9 @@ body {
 /*    Functions    */
 /*    Variables   */
 .tools {
+  overflow: hidden;
   width: 100%;
+  position: relative;
   padding: 130px 1rem 60px;
 }
 .tools .container {
@@ -281,6 +238,18 @@ body {
 .tools .container .flex .box:first-child {
   transform: translateY(38px);
 }
+.tools .container .flex .box:first-child::before {
+  content: "";
+  position: absolute;
+  left: 420px;
+  bottom: -180px;
+  background-image: url("../img/halfcircle.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 180px;
+  height: 180px;
+  z-index: -1;
+}
 .tools .container .flex .box:last-child {
   padding: 38px;
 }
@@ -289,6 +258,7 @@ body {
   border-radius: 12px;
   border: 1px solid #e8ebf2;
   box-shadow: rgba(0, 0, 0, 0.06) 0px 1px 4px;
+  background-color: #fff;
 }
 .tools .container .flex .box .barra h3 {
   font-size: 1rem;
@@ -389,6 +359,7 @@ body {
 /*    Functions    */
 /*    Variables   */
 .features {
+  overflow: hidden;
   width: 100%;
   padding: 90px 1rem;
 }
@@ -412,6 +383,19 @@ body {
 }
 .features .container .bflex .bbox:first-child {
   padding: 38px;
+}
+.features .container .bflex .bbox:first-child::before {
+  content: "";
+  position: absolute;
+  left: 460px;
+  bottom: -200px;
+  background-image: url("../img/halfcircle.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 180px;
+  height: 180px;
+  transform: rotate(-90deg);
+  z-index: -1;
 }
 .features .container .bflex .bbox .play {
   position: absolute;
@@ -473,6 +457,22 @@ body {
   width: 100%;
   position: relative;
   background-color: #038aff;
+  z-index: 0;
+}
+.hero .globe {
+  position: absolute;
+  top: 0;
+  left: -120px;
+  transform: translateY(0px);
+  animation: float 6s ease-in-out infinite;
+}
+.hero .blueglobe {
+  position: absolute;
+  right: 0;
+  bottom: -180px;
+  transform: translateY(0px);
+  animation: float 6s ease-in-out infinite;
+  z-index: 1;
 }
 .hero::before {
   content: "";
@@ -481,7 +481,7 @@ body {
   bottom: -70px;
   width: 100vw;
   height: 70px;
-  z-index: 10;
+  z-index: 0;
   background: linear-gradient(to right bottom, #038aff 50%, transparent 50%);
 }
 .hero .container {
@@ -496,10 +496,12 @@ body {
   min-height: 700px;
 }
 .hero .container .flexbox .box {
+  position: relative;
   flex: 1;
   display: flex;
   flex-wrap: wrap;
   padding: 1rem;
+  z-index: 10;
 }
 .hero .container .flexbox .box:nth-child(2) {
   justify-content: center;
@@ -735,10 +737,39 @@ body {
   }
 }
 
+@media screen and (max-width: 480px) {
+  .hero .globe {
+    width: 190px;
+  }
+  .hero .blueglobe {
+    width: 230px;
+  }
+}
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
 /*    Functions    */
 /*    Variables   */
 /*  Easy section  */
 .easy {
+  overflow: hidden;
   width: 100%;
   padding: 0 1rem;
 }
@@ -759,6 +790,18 @@ body {
 }
 .easy .container .flexbox .box:first-child {
   padding: 38px;
+}
+.easy .container .flexbox .box:first-child::before {
+  content: "";
+  position: absolute;
+  left: 460px;
+  top: -200px;
+  background-image: url("../img/halfcircle.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 180px;
+  height: 180px;
+  z-index: -1;
 }
 .easy .container .flexbox .box .logos {
   padding-top: 40px;
@@ -1193,6 +1236,7 @@ body {
   border-radius: 12px;
   border: 1px solid #e8ebf2;
   box-shadow: rgba(0, 0, 0, 0.06) 0px 1px 4px;
+  background-color: #fff;
 }
 .technology .container .flex-box .sbox .grid .box1 {
   grid-column: 1/1;
@@ -1393,11 +1437,21 @@ body {
   .technology .container .flex-box .sbox {
     flex: 1 0 100%;
   }
+  .technology .container .flex-box .sbox .grid .box1 .bar {
+    justify-content: center;
+  }
+  .technology .container .flex-box .sbox .grid .box1 .bar .name {
+    justify-content: center;
+  }
   .technology .container .flex-box .sbox .grid .box1 .bar .name .center .text {
     text-align: center;
   }
   .technology .container .flex-box .sbox .grid .box1 .bar .name p {
-    padding-left: 10px;
+    text-align: center;
+    padding-left: 0;
+  }
+  .technology .container .flex-box .sbox .grid .box3 .bar {
+    justify-content: center;
   }
   .technology .container .flex-box .sbox .grid .box3 .bar .text {
     padding-top: 20px;

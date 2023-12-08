@@ -31,7 +31,9 @@ $color: (
 );
 
 .tools {
+  overflow: hidden;
   width: 100%;
+  position: relative;
   padding: 130px 1rem 60px;
   .container {
     width: min(1140px, 100%);
@@ -45,6 +47,18 @@ $color: (
         flex: 1;
         &:first-child {
           transform: translateY(38px);
+          &::before {
+            content: "";
+            position: absolute;
+            left: 420px;
+            bottom: -180px;
+            background-image: url("../img/halfcircle.svg");
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 180px;
+            height: 180px;
+            z-index: -1;
+          }
         }
         &:last-child {
           padding: 38px;
@@ -52,6 +66,7 @@ $color: (
         .barra {
           padding: 34px;
           @include lt.shadow;
+          background-color: color(bg, white);
           h3 {
             font-size: 1rem;
             font-weight: lt.$fw-500;

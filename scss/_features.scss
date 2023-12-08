@@ -31,6 +31,7 @@ $color: (
 );
 
 .features {
+  overflow: hidden;
   width: 100%;
   padding: 90px 1rem;
   .container {
@@ -50,6 +51,19 @@ $color: (
         padding: 1rem;
         &:first-child {
           padding: 38px;
+          &::before {
+            content: "";
+            position: absolute;
+            left: 460px;
+            bottom: -200px;
+            background-image: url("../img/halfcircle.svg");
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 180px;
+            height: 180px;
+            transform: rotate(-90deg);
+            z-index: -1;
+          }
         }
         .play {
           position: absolute;

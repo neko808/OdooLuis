@@ -1,4 +1,13 @@
+/*  Responsive menu  */
+
+const menu_btn = document.querySelector(".menu-btn");
+const overlay = document.querySelector(".menu");
+menu_btn.addEventListener("click", function () {
+  overlay.classList.toggle("is-active");
+});
+
 /*  Accordion  */
+
 if (document.readyState !== "loading") {
   console.log("ready!");
   ready();
@@ -51,11 +60,3 @@ var accordionClick = (eventHappened) => {
     expander.innerHTML = "&#10134;";
   }
 };
-
-/*  Responsive menu  */
-// const burgerMenu = document.getElementById("hamb");
-// const overlay = document.getElementById("menu");
-// burgerMenu.addEventListener("click", function () {
-//   this.classList.toggle("close");
-//   overlay.classList.toggle("overlay");
-// });
