@@ -9,6 +9,8 @@ There was no need to add external libraries to address simplicity and performanc
 
 All SCSS files are separated into modules to find the one you want to work with. Each module corresponds to each section of the landing page.
 
+In the 'layout.scss' file you can find some of the mixins and variables used in the project.
+
 Some areas of improvement include:
 
 1.  The possibility to make it more attractive, by using floating shapes,

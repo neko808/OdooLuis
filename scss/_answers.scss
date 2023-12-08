@@ -88,6 +88,8 @@ $color: (
           transition: max-height 0.2s ease-out;
         }
         .main-content .description p {
+          color: color(text, 1);
+          padding-bottom: 30px;
           margin-top: 4px;
         }
       }

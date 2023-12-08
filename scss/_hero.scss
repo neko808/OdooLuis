@@ -338,6 +338,14 @@ $color: (
   }
 }
 
+@media screen and (max-width: 993px) {
+  .hero {
+    .globe {
+      width: 190px;
+    }
+  }
+}
+
 @media screen and (max-width: 480px) {
   .hero {
     .globe {
